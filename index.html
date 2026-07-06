@@ -27,6 +27,8 @@
             --blue-bg: #eef4f8;
             --purple: #8b7fad;
             --purple-bg: #f6f4fa;
+            --pink: #c47a9a;
+            --pink-bg: #fdf0f6;
             --radius: 18px;
             --radius-sm: 12px;
             --radius-xs: 8px;
@@ -62,9 +64,7 @@
             body { background: #f0ece6; }
         }
         .container { padding: 16px 20px 40px; }
-        @media (min-width: 640px) {
-            .container { padding: 24px 32px 60px; }
-        }
+        @media (min-width: 640px) { .container { padding: 24px 32px 60px; } }
 
         h1 { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 4px; letter-spacing: -0.3px; }
         h2 { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px; letter-spacing: -0.2px; }
@@ -79,9 +79,7 @@
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
         }
-        @media (min-width: 640px) {
-            .card { padding: 24px 22px; margin-bottom: 16px; border-radius: 20px; }
-        }
+        @media (min-width: 640px) { .card { padding: 24px 22px; margin-bottom: 16px; border-radius: 20px; } }
 
         .btn {
             display: inline-flex;
@@ -141,10 +139,7 @@
             background: #fff;
         }
         textarea { min-height: 60px; }
-        @media (min-width: 640px) {
-            textarea { min-height: 80px; font-size: 16px; }
-            input[type="text"] { font-size: 16px; }
-        }
+        @media (min-width: 640px) { textarea { min-height: 80px; font-size: 16px; } input[type="text"] { font-size: 16px; } }
 
         .scale-row { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 14px; }
         .scale-btn {
@@ -279,11 +274,84 @@
         .trail-block.purple { border-left: 4px solid var(--purple); }
         .trail-block.green { border-left: 4px solid var(--green); }
         .trail-block.blue { border-left: 4px solid var(--primary); }
+        .trail-block.pink { border-left: 4px solid var(--pink); }
         .trail-block-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
         .trail-block-icon { font-size: 22px; }
 
         .mini-chart { display: flex; align-items: flex-end; gap: 3px; height: 60px; padding: 4px 0; }
         .mini-chart-bar { flex: 1; background: var(--primary); border-radius: 3px 3px 0 0; min-width: 3px; transition: height 0.3s; }
+
+        /* САД БЛАГОДАРНОСТИ */
+        .garden-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 8px 0;
+            min-height: 40px;
+            align-items: center;
+        }
+        .garden-flower {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            background: #fefdf7;
+            border: 2px solid #e8e4d0;
+            transition: all 0.3s ease;
+            cursor: default;
+            animation: bloomIn 0.5s ease;
+        }
+        @keyframes bloomIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .garden-empty {
+            font-size: 12px;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* ЛЕПЕСТКИ ЧУВСТВ */
+        .petals-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 12px 0;
+        }
+        .petal-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            min-width: 50px;
+        }
+        .petal-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            border: 2px solid var(--border);
+            background: #fafaf9;
+            transition: all 0.3s;
+        }
+        .petal-label {
+            font-size: 10px;
+            color: var(--text-light);
+            text-align: center;
+            line-height: 1.2;
+        }
+        .petal-count {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--primary);
+        }
 
         .summary-section { margin: 10px 0; padding: 14px; background: #fafaf9; border-radius: var(--radius-sm); }
         .summary-section h4 { font-size: 14px; color: var(--primary); margin-bottom: 4px; }
@@ -334,7 +402,7 @@
     </div>
 
     <script>
-        const STORAGE_KEY = 'navigator_my_path_v5';
+        const STORAGE_KEY = 'navigator_my_path_v6';
         const TOTAL_DAYS = 30;
         const TG_CHANNEL = 'https://t.me/+ZbtgpDqcnTVlNTA6';
         const TG_KATYA = 'https://t.me/ginger_coach4you';
@@ -347,21 +415,21 @@
         ];
 
         const FEELINGS = [
-            {id:'fear',emoji:'😨',name:'Страх',tagline:'Мне страшно. А значит — важно.'},
-            {id:'anger',emoji:'🔥',name:'Злость',tagline:'Я злюсь. А значит — мне не всё равно.'},
-            {id:'guilt',emoji:'😞',name:'Вина',tagline:'Я чувствую вину. А значит — мне важны отношения.'},
-            {id:'shame',emoji:'🫣',name:'Стыд',tagline:'Мне стыдно. А значит — я хочу быть принятой.'},
-            {id:'sadness',emoji:'💧',name:'Печаль',tagline:'Мне грустно. А значит — я что-то теряю.'},
-            {id:'disgust',emoji:'😟',name:'Отвращение',tagline:'Мне неприятно. Значит — ценности под угрозой.'},
-            {id:'despair',emoji:'🌪️',name:'Отчаяние',tagline:'Я в отчаянии. Старые опоры рухнули.'},
-            {id:'confusion',emoji:'😶',name:'Растерянность',tagline:'Я на перекрёстке, и это нормально.'},
-            {id:'boredom',emoji:'😑',name:'Скука',tagline:'Старое больше не работает.'},
-            {id:'envy',emoji:'🎯',name:'Зависть',tagline:'Я вижу, чего хочу.'},
-            {id:'disappointment',emoji:'🎈',name:'Разочарование',tagline:'Иллюзия встретилась с реальностью.'},
-            {id:'regret',emoji:'😔',name:'Сожаление',tagline:'Мне важно было бы иначе.'},
-            {id:'resentment',emoji:'🦔',name:'Обида',tagline:'Меня не увидели там, где было важно.'},
-            {id:'joy',emoji:'🌞',name:'Радость',tagline:'Я живая.'},
-            {id:'interest',emoji:'🧠',name:'Интерес',tagline:'Я живой.'}
+            {id:'fear',emoji:'😨',name:'Страх',color:'#c9a96e',tagline:'Мне страшно. А значит — важно.'},
+            {id:'anger',emoji:'🔥',name:'Злость',color:'#c47a7a',tagline:'Я злюсь. А значит — мне не всё равно.'},
+            {id:'guilt',emoji:'😞',name:'Вина',color:'#c4946c',tagline:'Я чувствую вину. А значит — мне важны отношения.'},
+            {id:'shame',emoji:'🫣',name:'Стыд',color:'#c47a9a',tagline:'Мне стыдно. А значит — я хочу быть принятой.'},
+            {id:'sadness',emoji:'💧',name:'Печаль',color:'#6b8fad',tagline:'Мне грустно. А значит — я что-то теряю.'},
+            {id:'disgust',emoji:'😟',name:'Отвращение',color:'#8b9a6e',tagline:'Мне неприятно. Значит — ценности под угрозой.'},
+            {id:'despair',emoji:'🌪️',name:'Отчаяние',color:'#7a6e8b',tagline:'Я в отчаянии. Старые опоры рухнули.'},
+            {id:'confusion',emoji:'😶',name:'Растерянность',color:'#9a9a9a',tagline:'Я на перекрёстке, и это нормально.'},
+            {id:'boredom',emoji:'😑',name:'Скука',color:'#b0a89a',tagline:'Старое больше не работает.'},
+            {id:'envy',emoji:'🎯',name:'Зависть',color:'#8b9a5e',tagline:'Я вижу, чего хочу.'},
+            {id:'disappointment',emoji:'🎈',name:'Разочарование',color:'#9a8b7a',tagline:'Иллюзия встретилась с реальностью.'},
+            {id:'regret',emoji:'😔',name:'Сожаление',color:'#8b8b9a',tagline:'Мне важно было бы иначе.'},
+            {id:'resentment',emoji:'🦔',name:'Обида',color:'#a08b7a',tagline:'Меня не увидели там, где было важно.'},
+            {id:'joy',emoji:'🌞',name:'Радость',color:'#c9a84e',tagline:'Я живая.'},
+            {id:'interest',emoji:'🧠',name:'Интерес',color:'#5b9a7e',tagline:'Я живой.'}
         ];
 
         const HEAVY_FEELINGS = {
@@ -371,6 +439,8 @@
             resentment:{title:'🦔 Обида',body:'Обида — это когда больно, но сказать трудно. Когда тебя не увидели там, где было важно.',truth:'Обида говорит о твоей потребности быть замеченной. Это честность.',note:'Это чувство — не весь ты. Ты больше, чем обида.'},
             fear:{title:'😨 Страх',body:'Страх — это сторожевой пёс. Он оберегает то, что тебе дорого.',truth:'Страх говорит: «Здесь что-то важное». Он помогает двигаться осознанно.',note:'Это чувство — не весь ты. Ты больше, чем страх.'}
         };
+
+        const GARDEN_FLOWERS = ['🌸','🌼','🌺','🌻','🌷','🪷','💮','🏵️','🌾','🍀'];
 
         const SUPPORT_PHRASES = {
             low:['Спад — часть пути, а не ошибка. Что бы ты сказал другу, который прошёл столько же?','Не каждый день будет лёгким. Но ты здесь — и это уже победа.','Иногда шаг назад — это способ разбежаться. Ты всё ещё на пути.'],
@@ -514,13 +584,19 @@
             const allDays=Object.entries(state.days).map(([d,data])=>({day:parseInt(d),...data}));
             const sortedDays=allDays.sort((a,b)=>a.day-b.day);
             const scales=sortedDays.map(d=>d.scale||0);
-            const lastHeavyDay=sortedDays.filter(d=>d.feelings&&d.feelings.some(fid=>HEAVY_FEELINGS[fid])).pop();
-            const lastSelfSupport=sortedDays.filter(d=>d.selfSupport).pop();
             const weekNumber=getCurrentWeekNumber();
             const showIdentity=today>0&&today%7===0&&!state.weeklyIdentity[weekNumber];
             const showGratitude=today>0&&today%3===0&&!state.gratitudeGarden.find(g=>g.dayNumber===today)&&state.days[today];
             const showMaelstromWarning=today>=3&&today<=5&&!state._maelstromShown;
             const totalFilled=Object.keys(state.days).length;
+
+            // Тяжёлые чувства за последние 3 дня
+            const recentDays=sortedDays.filter(d=>d.day>=today-2&&d.day<=today);
+            const heavyRecent=recentDays.filter(d=>d.feelings&&d.feelings.some(fid=>HEAVY_FEELINGS[fid]));
+            const lastHeavy=heavyRecent.pop();
+
+            // Самоподдержка
+            const lastSelfSupport=sortedDays.filter(d=>d.selfSupport).pop();
 
             return `
                 <div class="card" style="padding:14px 18px;">
@@ -564,7 +640,13 @@
                     <button class="btn btn-primary btn-block mt-8" id="btnStartJourney">Начать путь</button>
                 </div>`}
 
-                ${renderTrailBlocks(today,lastHeavyDay,lastSelfSupport,showIdentity,showGratitude,showMaelstromWarning,totalFilled,sortedDays,scales)}
+                ${renderTrailBlocks(today,lastHeavy,lastSelfSupport,showIdentity,showGratitude,showMaelstromWarning,totalFilled,sortedDays,scales)}
+
+                <!-- Сад благодарности (всегда виден если есть цветы) -->
+                ${state.gratitudeGarden.length>0?renderGardenBlock():''}
+
+                <!-- Лепестки чувств (после 7+ дней) -->
+                ${totalFilled>=7?renderPetalsBlock(sortedDays):''}
 
                 <div class="text-center mt-16" style="padding:12px;background:var(--accent-light);border-radius:var(--radius-sm);">
                     <p style="font-size:12px;color:var(--accent);">Чувств больше, чем кажется — <a href="${TG_CHANNEL}" target="_blank" style="color:var(--accent);font-weight:600;">«Разрешаю себе чувствовать»</a></p>
@@ -587,7 +669,39 @@
             return cells;
         }
 
-        function renderTrailBlocks(today,lastHeavyDay,lastSelfSupport,showIdentity,showGratitude,showMaelstromWarning,totalFilled,sortedDays,scales) {
+        function renderGardenBlock() {
+            const flowers=state.gratitudeGarden.map((g,i)=>GARDEN_FLOWERS[i%GARDEN_FLOWERS.length]);
+            return `<div class="trail-block green" id="gardenBlock">
+                <div class="trail-block-header"><span class="trail-block-icon">🌸</span><strong>Сад благодарности</strong></div>
+                <div class="garden-grid">
+                    ${flowers.map((f,i)=>`<div class="garden-flower" title="${escapeHtml(state.gratitudeGarden[i].text)}">${f}</div>`).join('')}
+                </div>
+            </div>`;
+        }
+
+        function renderPetalsBlock(sortedDays) {
+            const last7Days=sortedDays.filter(d=>d.day>getTodayDayNumber()-7);
+            const allFeelings={};
+            last7Days.forEach(d=>{if(d.feelings)d.feelings.forEach(fid=>{allFeelings[fid]=(allFeelings[fid]||0)+1;});});
+            const topFeelings=Object.entries(allFeelings).sort((a,b)=>b[1]-a[1]).slice(0,8);
+            if(topFeelings.length===0) return '';
+            return `<div class="trail-block pink">
+                <div class="trail-block-header"><span class="trail-block-icon">🎨</span><strong>Мои чувства за неделю</strong></div>
+                <div class="petals-container">
+                    ${topFeelings.map(([fid,count])=>{
+                        const f=FEELINGS.find(ff=>ff.id===fid);
+                        if(!f) return '';
+                        return `<div class="petal-item">
+                            <div class="petal-circle" style="border-color:${f.color};background:${f.color}15;">${f.emoji}</div>
+                            <span class="petal-label">${f.name}</span>
+                            <span class="petal-count">${count}</span>
+                        </div>`;
+                    }).join('')}
+                </div>
+            </div>`;
+        }
+
+        function renderTrailBlocks(today,lastHeavy,lastSelfSupport,showIdentity,showGratitude,showMaelstromWarning,totalFilled,sortedDays,scales) {
             let html='';
 
             if(showMaelstromWarning){
@@ -598,14 +712,19 @@
                 </div>`;
             }
 
-            if(lastHeavyDay){
-                const heavyFid=lastHeavyDay.feelings.find(fid=>HEAVY_FEELINGS[fid]);
+            // КОНТЕЙНЕР ДЛЯ ТЯЖЁЛЫХ ЧУВСТВ — отдельный блок
+            if(lastHeavy){
+                const heavyFid=lastHeavy.feelings.find(fid=>HEAVY_FEELINGS[fid]);
                 if(heavyFid){
                     const hf=HEAVY_FEELINGS[heavyFid];
-                    html+=`<div class="trail-block accent">
+                    const f=FEELINGS.find(ff=>ff.id===heavyFid);
+                    html+=`<div class="trail-block accent" id="heavyContainer">
                         <div class="trail-block-header"><span class="trail-block-icon">🫂</span><strong>Контейнер поддержки</strong></div>
                         <div class="container-box" style="margin:0;background:transparent;border:none;padding:8px 0;">
-                            <h4>${hf.title}</h4><p>${hf.body}</p><p><strong>${hf.truth}</strong></p><p class="note">${hf.note}</p>
+                            <h4>${hf.title} ${f?f.emoji:''}</h4>
+                            <p>${hf.body}</p>
+                            <p><strong>${hf.truth}</strong></p>
+                            <p class="note">${hf.note}</p>
                         </div>
                         <a href="${TG_KATYA}" target="_blank" class="btn btn-accent btn-sm mt-8">Мне нужно больше поддержки</a>
                     </div>`;
@@ -644,19 +763,6 @@
                     <textarea id="gratitudeInputTrail" placeholder="Я благодарен(на) за..."></textarea>
                     <button class="btn btn-primary btn-sm mt-8" id="btnSaveGratitudeTrail">Добавить в сад</button>
                 </div>`;
-            }
-
-            if(totalFilled>0){
-                const allFeelings={};
-                sortedDays.forEach(d=>{if(d.feelings)d.feelings.forEach(fid=>{allFeelings[fid]=(allFeelings[fid]||0)+1;});});
-                const topFeelings=Object.entries(allFeelings).sort((a,b)=>b[1]-a[1]).slice(0,5);
-                if(topFeelings.length>0){
-                    html+=`<div class="trail-block blue">
-                        <div class="trail-block-header"><span class="trail-block-icon">🎨</span><strong>Мои чувства</strong></div>
-                        <div style="display:flex;gap:6px;flex-wrap:wrap;">${topFeelings.map(([fid,c])=>{const f=FEELINGS.find(ff=>ff.id===fid);return f?`<span class="badge badge-primary">${f.emoji} ${f.name} ${c}</span>`:'';}).join('')}</div>
-                        <a href="${TG_CHANNEL}" target="_blank" class="btn btn-sm btn-outline mt-8" style="font-size:11px;">Разрешаю себе чувствовать →</a>
-                    </div>`;
-                }
             }
 
             if(totalFilled>=7){
@@ -764,16 +870,22 @@
             const selfSupports=sortedDays.filter(d=>d.selfSupport).map(d=>d.selfSupport).slice(-5);
             const shareCount=state.sharingHistory.length;
 
+            // Все чувства для лепестков
+            const allFeelings={};
+            sortedDays.forEach(d=>{if(d.feelings)d.feelings.forEach(fid=>{allFeelings[fid]=(allFeelings[fid]||0)+1;});});
+            const topFeelings=Object.entries(allFeelings).sort((a,b)=>b[1]-a[1]).slice(0,8);
+
             return `
                 <div class="card text-center"><div style="font-size:48px;">🌟</div><h2>${state.wandererName||'Путник'}, твой путь пройден</h2><p class="text-muted">Месяц завершён. Посмотри, каким он был.</p></div>
                 <div class="card"><h3>📊 Цифры</h3><div class="summary-section"><p>Пройдено: ${progress.completed}/${TOTAL_DAYS}</p><p>Среднее приближение: ${avgScale}/10</p>${scales.length>0?`<p>Старт→Финиш: ${scales[0]}/10→${scales[scales.length-1]}/10</p>`:''}${shareCount>0?`<p>💌 Ты делился с Катей ${shareCount} ${shareCount===1?'раз':shareCount<5?'раза':'раз'} за этот месяц</p>`:''}</div>
                 ${scales.length>0?`<div class="mini-chart" style="height:80px;">${scales.map(s=>`<div class="mini-chart-bar" style="height:${s*10}%;" title="${s}/10"></div>`).join('')}</div>`:''}</div>
                 ${state.goalHistory.length>0?`<div class="card"><h3>🌿 Развилки пути</h3>${state.goalHistory.map((h,i)=>`<div class="summary-section"><p style="font-size:12px;color:var(--text-light);">Развилка ${i+1}:</p><p style="font-size:13px;">${escapeHtml(h.goal)}</p></div>`).join('')}</div>`:''}
+                ${topFeelings.length>0?`<div class="card"><h3>🎨 Мои чувства за месяц</h3><div class="petals-container">${topFeelings.map(([fid,count])=>{const f=FEELINGS.find(ff=>ff.id===fid);return f?`<div class="petal-item"><div class="petal-circle" style="border-color:${f.color};background:${f.color}15;">${f.emoji}</div><span class="petal-label">${f.name}</span><span class="petal-count">${count}</span></div>`:'';}).join('')}</div></div>`:''}
                 ${insights.length>0?`<div class="card"><h3>💡 Инсайты</h3>${insights.map(i=>`<div class="summary-section">${escapeHtml(i)}</div>`).join('')}</div>`:''}
                 ${Object.keys(state.weeklyIdentity).length>0?`<div class="card"><h3>🪞 Кто я сейчас</h3>${Object.entries(state.weeklyIdentity).sort((a,b)=>parseInt(a[0])-parseInt(b[0])).map(([w,t])=>`<div class="summary-section"><strong>Нед.${w}:</strong> ${escapeHtml(t)}</div>`).join('')}</div>`:''}
                 ${selfSupports.length>0?`<div class="card"><h3>🤲 Способы самоподдержки</h3>${selfSupports.map(s=>`<div class="summary-section">${escapeHtml(s)}</div>`).join('')}</div>`:''}
                 ${sessionNotes.length>0?`<div class="card"><h3>💬 На сессию с Катей</h3>${sessionNotes.map(s=>`<div class="summary-section">${escapeHtml(s)}</div>`).join('')}</div>`:''}
-                ${state.gratitudeGarden.length>0?`<div class="card"><h3>🌸 Сад благодарности</h3>${state.gratitudeGarden.map(g=>`<div class="summary-section"><strong>День ${g.dayNumber}:</strong> ${escapeHtml(g.text)}</div>`).join('')}</div>`:''}
+                ${state.gratitudeGarden.length>0?renderGardenBlock():''}
                 <div class="card text-center">
                     <button class="btn btn-primary btn-block" id="btnShareSummary">Поделиться с Катей</button>
                     <button class="btn btn-secondary btn-block" id="btnSavePDF">Сохранить как PDF</button>
@@ -903,10 +1015,10 @@
             let h=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Навигатор — Итоги</title><style>body{font-family:-apple-system,sans-serif;color:#3a3a3a;padding:24px;max-width:520px;margin:0 auto;line-height:1.6;}h1{color:#4a7c96;text-align:center;}h2{color:#4a7c96;margin-top:16px;border-bottom:1px solid #e8e4dd;padding-bottom:4px;}.s{background:#fafaf9;padding:10px;border-radius:8px;margin:8px 0;}</style></head><body>
             <h1>${state.wandererEmoji||'🧭'} ${state.wandererName||'Путник'} — карта пути</h1><p style="text-align:center;color:#7a7a7a;">${escapeHtml(state.goal||'')}</p>${state.values.length>0?`<p style="text-align:center;">🧭 ${state.values.join(' • ')}</p>`:''}
             <h2>📊 Цифры</h2><p>Пройдено: ${p.completed}/${TOTAL_DAYS}</p>${scales.length>0?`<p>Старт: ${scales[0]}/10 → Финиш: ${scales[scales.length-1]}/10</p>`:''}
-            ${state.goalHistory.length>0?`<h2>🌿 Развилки пути</h2>${state.goalHistory.map((h,i)=>`<div class="s"><strong>Развилка ${i+1}:</strong> ${escapeHtml(h.goal)}</div>`).join('')}`:''}
+            ${state.goalHistory.length>0?`<h2>🌿 Развилки</h2>${state.goalHistory.map((h,i)=>`<div class="s"><strong>Развилка ${i+1}:</strong> ${escapeHtml(h.goal)}</div>`).join('')}`:''}
             ${insights.length>0?`<h2>💡 Инсайты</h2>${insights.map(i=>`<div class="s">${escapeHtml(i)}</div>`).join('')}`:''}
             ${Object.keys(state.weeklyIdentity).length>0?`<h2>🪞 Кто я сейчас</h2>${Object.entries(state.weeklyIdentity).sort((a,b)=>parseInt(a[0])-parseInt(b[0])).map(([w,t])=>`<div class="s"><strong>Нед.${w}:</strong> ${escapeHtml(t)}</div>`).join('')}`:''}
-            ${selfSupports.length>0?`<h2>🤲 Способы самоподдержки</h2>${selfSupports.map(s=>`<div class="s">${escapeHtml(s)}</div>`).join('')}`:''}
+            ${selfSupports.length>0?`<h2>🤲 Самоподдержка</h2>${selfSupports.map(s=>`<div class="s">${escapeHtml(s)}</div>`).join('')}`:''}
             ${sessionNotes.length>0?`<h2>💬 На сессию с Катей</h2>${sessionNotes.map(s=>`<div class="s">${escapeHtml(s)}</div>`).join('')}`:''}
             ${state.gratitudeGarden.length>0?`<h2>🌸 Сад благодарности</h2>${state.gratitudeGarden.map(g=>`<div class="s">${escapeHtml(g.text)}</div>`).join('')}`:''}
             <p style="text-align:center;margin-top:20px;color:#7a7a7a;">🤍 Навигатор моего пути к цели</p></body></html>`;
