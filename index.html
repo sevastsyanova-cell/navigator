@@ -25,14 +25,14 @@
             --red-bg: #fdf0f0;
             --blue: #6b8fad;
             --blue-bg: #eef4f8;
+            --purple: #8b7fad;
+            --purple-bg: #f6f4fa;
             --radius: 18px;
             --radius-sm: 12px;
             --radius-xs: 8px;
             --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: var(--font-stack);
             background: var(--bg);
@@ -44,8 +44,6 @@
             display: flex;
             justify-content: center;
         }
-
-        /* Основной контейнер — адаптивный */
         .app-wrapper {
             width: 100%;
             max-width: 600px;
@@ -53,7 +51,6 @@
             background: var(--bg);
             position: relative;
         }
-
         @media (min-width: 640px) {
             .app-wrapper {
                 margin: 20px auto;
@@ -62,49 +59,18 @@
                 box-shadow: var(--shadow-lg);
                 background: #fafaf8;
             }
-            body {
-                background: #f0ece6;
-            }
+            body { background: #f0ece6; }
         }
-
-        .container {
-            padding: 16px 20px 40px;
-        }
-
+        .container { padding: 16px 20px 40px; }
         @media (min-width: 640px) {
-            .container {
-                padding: 24px 32px 60px;
-            }
+            .container { padding: 24px 32px 60px; }
         }
 
-        /* Типографика */
-        h1 {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 4px;
-            letter-spacing: -0.3px;
-        }
-        h2 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 8px;
-            letter-spacing: -0.2px;
-        }
-        h3 {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-        @media (min-width: 640px) {
-            h1 { font-size: 26px; }
-            h2 { font-size: 20px; }
-            h3 { font-size: 16px; }
-        }
+        h1 { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 4px; letter-spacing: -0.3px; }
+        h2 { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px; letter-spacing: -0.2px; }
+        h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+        @media (min-width: 640px) { h1 { font-size: 26px; } h2 { font-size: 20px; } h3 { font-size: 16px; } }
 
-        /* Карточки */
         .card {
             background: var(--card);
             border-radius: var(--radius);
@@ -114,14 +80,9 @@
             border: 1px solid var(--border);
         }
         @media (min-width: 640px) {
-            .card {
-                padding: 24px 22px;
-                margin-bottom: 16px;
-                border-radius: 20px;
-            }
+            .card { padding: 24px 22px; margin-bottom: 16px; border-radius: 20px; }
         }
 
-        /* Кнопки */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -141,38 +102,15 @@
             min-height: 48px;
         }
         .btn:active { transform: scale(0.97); }
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-            width: 100%;
-        }
+        .btn-primary { background: var(--primary); color: #fff; width: 100%; }
         .btn-primary:hover { background: #3d6b83; }
-        .btn-secondary {
-            background: var(--primary-light);
-            color: var(--primary);
-            width: 100%;
-        }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        .btn-sm {
-            padding: 8px 16px;
-            font-size: 13px;
-            border-radius: 20px;
-            min-height: 38px;
-        }
+        .btn-secondary { background: var(--primary-light); color: var(--primary); width: 100%; }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .btn-accent { background: var(--accent); color: #fff; width: 100%; }
+        .btn-sm { padding: 8px 16px; font-size: 13px; border-radius: 20px; min-height: 38px; }
         .btn-block { width: 100%; margin-bottom: 8px; }
-        .btn-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            padding: 0;
-            font-size: 22px;
-        }
+        .btn-icon { width: 48px; height: 48px; border-radius: 50%; padding: 0; font-size: 22px; }
 
-        /* Поля ввода */
         label {
             display: block;
             font-size: 13px;
@@ -180,12 +118,10 @@
             color: var(--text-light);
             margin-bottom: 6px;
             margin-top: 14px;
-            letter-spacing: 0.2px;
-            text-transform: uppercase;
             letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
-        input[type="text"],
-        textarea {
+        input[type="text"], textarea {
             width: 100%;
             padding: 13px 15px;
             border: 2px solid var(--border);
@@ -198,11 +134,10 @@
             color: var(--text);
             -webkit-appearance: none;
         }
-        input[type="text"]:focus,
-        textarea:focus {
+        input[type="text"]:focus, textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(74, 124, 150, 0.1);
+            box-shadow: 0 0 0 3px rgba(74,124,150,0.1);
             background: #fff;
         }
         textarea { min-height: 60px; }
@@ -211,177 +146,75 @@
             input[type="text"] { font-size: 16px; }
         }
 
-        /* Шкала */
-        .scale-row {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin: 8px 0 14px;
-        }
+        .scale-row { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 14px; }
         .scale-btn {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            border: 2px solid var(--border);
-            background: #fff;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.15s;
-            color: var(--text);
-            font-family: var(--font-stack);
+            width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--border);
+            background: #fff; font-size: 14px; font-weight: 600; cursor: pointer;
+            transition: all 0.15s; color: var(--text); font-family: var(--font-stack);
             -webkit-tap-highlight-color: transparent;
         }
         .scale-btn:hover { border-color: var(--primary); background: var(--primary-light); }
         .scale-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); transform: scale(1.1); }
-        @media (min-width: 640px) {
-            .scale-btn { width: 42px; height: 42px; font-size: 15px; }
-        }
+        @media (min-width: 640px) { .scale-btn { width: 42px; height: 42px; font-size: 15px; } }
 
-        /* Чувства */
-        .feelings-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 8px 0 14px;
-        }
+        .feelings-grid { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 14px; }
         .feeling-chip {
-            padding: 8px 14px;
-            border-radius: 20px;
-            border: 2px solid var(--border);
-            background: #fff;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.15s;
-            font-family: var(--font-stack);
-            color: var(--text);
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
+            padding: 8px 14px; border-radius: 20px; border: 2px solid var(--border);
+            background: #fff; font-size: 13px; cursor: pointer; transition: all 0.15s;
+            font-family: var(--font-stack); color: var(--text); -webkit-tap-highlight-color: transparent; user-select: none;
         }
         .feeling-chip:hover { border-color: var(--primary); background: #f8fafb; }
-        .feeling-chip.selected { background: var(--primary-light); border-color: var(--primary); color: var(--primary);
-        font-weight: 600; }
-        @media (min-width: 640px) {
-            .feeling-chip { padding: 10px 16px; font-size: 14px; border-radius: 22px; }
-        }
+        .feeling-chip.selected { background: var(--primary-light); border-color: var(--primary); color: var(--primary); font-weight: 600; }
+        @media (min-width: 640px) { .feeling-chip { padding: 10px 16px; font-size: 14px; border-radius: 22px; } }
 
-        /* Темп */
-        .tempo-options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin: 14px 0;
-        }
+        .tempo-options { display: flex; flex-direction: column; gap: 10px; margin: 14px 0; }
         .tempo-card {
-            background: #fff;
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            padding: 18px;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-align: left;
-            font-family: var(--font-stack);
-            color: var(--text);
-            -webkit-tap-highlight-color: transparent;
-            display: block;
-            width: 100%;
+            background: #fff; border: 2px solid var(--border); border-radius: var(--radius);
+            padding: 18px; cursor: pointer; transition: all 0.2s; text-align: left;
+            font-family: var(--font-stack); color: var(--text); -webkit-tap-highlight-color: transparent;
+            display: block; width: 100%;
         }
-        .tempo-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(74, 124, 150, 0.1); }
+        .tempo-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(74,124,150,0.1); }
         .tempo-card.selected { border-color: var(--primary); background: var(--primary-light); }
         .tempo-icon { font-size: 32px; margin-bottom: 4px; display: block; }
         .tempo-title { font-weight: 700; font-size: 16px; margin-bottom: 2px; }
         .tempo-desc { font-size: 13px; color: var(--text-light); line-height: 1.4; }
-        @media (min-width: 640px) {
-            .tempo-card { padding: 20px; }
-            .tempo-title { font-size: 17px; }
-        }
 
-        /* Контейнер для тяжёлых чувств */
         .container-box {
-            background: var(--accent-light);
-            border: 2px solid #e8d5c0;
-            border-radius: var(--radius);
-            padding: 18px;
-            margin: 12px 0;
+            background: var(--accent-light); border: 2px solid #e8d5c0;
+            border-radius: var(--radius); padding: 18px; margin: 12px 0;
         }
         .container-box h4 { font-size: 16px; margin-bottom: 6px; color: var(--accent); }
         .container-box p { font-size: 14px; color: #6b5b4e; margin-bottom: 6px; line-height: 1.5; }
         .container-box .note { font-style: italic; font-size: 13px; color: #8a7a6a; }
 
-        /* Бейджи */
-        .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 14px;
-            font-size: 12px;
-            font-weight: 600;
-        }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 14px; font-size: 12px; font-weight: 600; }
         .badge-green { background: var(--green-bg); color: var(--green); }
         .badge-amber { background: var(--amber-bg); color: var(--amber); }
         .badge-primary { background: var(--primary-light); color: var(--primary); }
 
-        /* Прогресс */
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: #e8e4dd;
-            border-radius: 4px;
-            margin: 8px 0;
-            overflow: hidden;
-        }
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), #5b9ab5);
-            border-radius: 4px;
-            transition: width 0.5s ease;
-        }
-        .progress-stats {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: var(--text-light);
-        }
+        .progress-bar { width: 100%; height: 8px; background: #e8e4dd; border-radius: 4px; margin: 8px 0; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), #5b9ab5); border-radius: 4px; transition: width 0.5s ease; }
+        .progress-stats { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-light); }
 
-        /* ТРОПА — ГЛАВНЫЙ ЭКРАН */
-        .trail-container {
-            position: relative;
-            padding: 20px 0;
-        }
-        .trail-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
+        .trail-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
         .trail-wanderer {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: var(--primary-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            flex-shrink: 0;
+            width: 52px; height: 52px; border-radius: 50%; background: var(--primary-light);
+            display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;
         }
-        @media (min-width: 640px) {
-            .trail-wanderer { width: 62px; height: 62px; font-size: 34px; }
-        }
+        @media (min-width: 640px) { .trail-wanderer { width: 62px; height: 62px; font-size: 34px; } }
         .trail-info { flex: 1; }
         .trail-name { font-weight: 700; font-size: 17px; }
         .trail-goal { font-size: 12px; color: var(--text-light); line-height: 1.3; margin-top: 2px; }
         .trail-compass { font-size: 11px; color: var(--accent); margin-top: 3px; }
 
-        /* Сетка шагов */
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 6px;
             margin: 16px 0;
         }
-        @media (min-width: 640px) {
-            .steps-grid { gap: 8px; }
-        }
+        @media (min-width: 640px) { .steps-grid { gap: 8px; } }
         .step-cell {
             aspect-ratio: 1;
             border-radius: var(--radius-xs);
@@ -401,781 +234,546 @@
             color: #bbb;
         }
         .step-cell.today {
-            background: #fff;
-            border-color: var(--primary);
-            color: var(--primary);
-            animation: pulse 2s infinite;
-            font-size: 13px;
-            font-weight: 700;
+            background: #fff; border-color: var(--primary); color: var(--primary);
+            animation: pulse 2s infinite; font-size: 13px; font-weight: 700;
         }
         .step-cell.completed {
-            background: var(--green-bg);
-            border-color: var(--green);
-            color: var(--green);
-            cursor: pointer;
+            background: var(--green-bg); border-color: var(--green); color: var(--green); cursor: pointer;
         }
         .step-cell.completed:hover { background: #d8ead6; }
         .step-cell.missed {
-            background: #f5f2ed;
-            border-color: #e0dcd5;
-            color: #ccc;
-            cursor: default;
+            background: #faf8f5; border-color: #e8e4dd; color: #ccc; cursor: pointer;
         }
+        .step-cell.missed:hover { background: #f0ece6; border-color: #d5d0c8; }
         .step-cell.future {
-            background: #f8f6f3;
-            border-color: #e8e4dd;
-            color: #d5d0c8;
-            cursor: default;
+            background: #f8f6f3; border-color: #e8e4dd; color: #d5d0c8; cursor: default;
         }
-        .step-cell.start {
-            background: var(--accent-light);
-            border-color: var(--accent);
-            color: var(--accent);
-            font-size: 18px;
-            cursor: default;
+        .step-cell.start-cell {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-color: var(--green); color: var(--green);
+            font-size: 20px; cursor: default; font-weight: 700;
         }
-        .step-cell .day-num {
-            position: absolute;
-            top: 3px;
-            right: 5px;
-            font-size: 8px;
-            font-weight: 400;
-            opacity: 0.7;
+        .step-cell.finish-cell {
+            background: linear-gradient(135deg, #fdf7ed, #fdf0e0);
+            border-color: var(--accent); color: var(--accent);
+            font-size: 20px; cursor: default; font-weight: 700;
         }
+        .step-cell .day-num { position: absolute; top: 3px; right: 5px; font-size: 8px; font-weight: 400; opacity: 0.7; }
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(74, 124, 150, 0.3); }
-            50% { box-shadow: 0 0 0 8px rgba(74, 124, 150, 0); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(74,124,150,0.3); }
+            50% { box-shadow: 0 0 0 8px rgba(74,124,150,0); }
         }
 
-        /* Легенда */
-        .legend {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            font-size: 11px;
-            color: var(--text-light);
-            margin-top: 8px;
-        }
+        .legend { display: flex; gap: 10px; flex-wrap: wrap; font-size: 11px; color: var(--text-light); margin-top: 8px; }
         .legend-item { display: flex; align-items: center; gap: 4px; }
-        .legend-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 3px;
-            display: inline-block;
-        }
+        .legend-dot { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
         .legend-dot.green { background: var(--green-bg); border: 1.5px solid var(--green); }
         .legend-dot.blue { background: #fff; border: 1.5px solid var(--primary); }
-        .legend-dot.gray { background: #f5f2ed; border: 1.5px solid #e0dcd5; }
+        .legend-dot.gray { background: #faf8f5; border: 1.5px solid #e8e4dd; }
 
-        /* Итоги */
-        .summary-section {
-            margin: 10px 0;
-            padding: 14px;
-            background: #fafaf9;
-            border-radius: var(--radius-sm);
+        .trail-block {
+            background: var(--card); border-radius: var(--radius); padding: 16px;
+            margin-bottom: 10px; box-shadow: var(--shadow); border: 1px solid var(--border);
         }
+        .trail-block.accent { border-left: 4px solid var(--accent); }
+        .trail-block.purple { border-left: 4px solid var(--purple); }
+        .trail-block.green { border-left: 4px solid var(--green); }
+        .trail-block.blue { border-left: 4px solid var(--primary); }
+        .trail-block-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .trail-block-icon { font-size: 22px; }
+
+        .mini-chart { display: flex; align-items: flex-end; gap: 3px; height: 60px; padding: 4px 0; }
+        .mini-chart-bar { flex: 1; background: var(--primary); border-radius: 3px 3px 0 0; min-width: 3px; transition: height 0.3s; }
+
+        .summary-section { margin: 10px 0; padding: 14px; background: #fafaf9; border-radius: var(--radius-sm); }
         .summary-section h4 { font-size: 14px; color: var(--primary); margin-bottom: 4px; }
 
-        /* Возвращение */
         .return-banner {
-            background: #fdf7ed;
-            border: 2px solid #e8d5c0;
-            border-radius: var(--radius);
-            padding: 18px;
-            text-align: center;
-            margin-bottom: 14px;
+            background: #fdf7ed; border: 2px solid #e8d5c0;
+            border-radius: var(--radius); padding: 18px; text-align: center; margin-bottom: 14px;
         }
         .return-banner h3 { color: var(--accent); margin-bottom: 4px; }
 
-        /* Утилиты */
         .text-center { text-align: center; }
         .text-muted { color: var(--text-light); font-size: 13px; }
-        .mt-8 { margin-top: 8px; }
-        .mt-12 { margin-top: 12px; }
-        .mt-16 { margin-top: 16px; }
-        .mb-8 { margin-bottom: 8px; }
-        .mb-12 { margin-bottom: 12px; }
-        .mb-16 { margin-bottom: 16px; }
+        .mt-8 { margin-top: 8px; } .mt-12 { margin-top: 12px; } .mt-16 { margin-top: 16px; }
+        .mb-8 { margin-bottom: 8px; } .mb-12 { margin-bottom: 12px; } .mb-16 { margin-bottom: 16px; }
         .divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
         .hidden { display: none !important; }
         .feelings-scroll { max-height: 180px; overflow-y: auto; padding-right: 4px; }
 
-        /* Модалка */
         .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5); z-index: 1000;
+            display: flex; align-items: center; justify-content: center; padding: 20px;
         }
         .modal-content {
-            background: #fff;
-            border-radius: var(--radius);
-            padding: 24px 20px;
-            max-width: 480px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            box-shadow: var(--shadow-lg);
+            background: #fff; border-radius: var(--radius); padding: 24px 20px;
+            max-width: 480px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: var(--shadow-lg);
         }
-        @media (min-width: 640px) {
-            .modal-content { padding: 28px 24px; }
-        }
+        @media (min-width: 640px) { .modal-content { padding: 28px 24px; } }
 
-        /* Скроллбар */
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #d5d0c8; border-radius: 2px; }
+
+        .toast {
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+            background: var(--text); color: #fff; padding: 12px 24px;
+            border-radius: 24px; font-size: 14px; font-weight: 500;
+            z-index: 2000; animation: toastIn 0.3s ease, toastOut 0.3s ease 2.2s forwards;
+            white-space: nowrap; max-width: 90vw; text-align: center;
+        }
+        @keyframes toastIn { from { opacity: 0; transform: translateX(-50%) translateY(10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+        @keyframes toastOut { from { opacity: 1; } to { opacity: 0; } }
     </style>
 </head>
 <body>
     <div class="app-wrapper">
-        <div class="container" id="app">
-            <!-- Рендерится через JS -->
-        </div>
+        <div class="container" id="app"></div>
     </div>
 
     <script>
-        // ==================== ДАННЫЕ И КОНСТАНТЫ ====================
-
-        const STORAGE_KEY = 'navigator_my_path_v3';
+        const STORAGE_KEY = 'navigator_my_path_v5';
         const TOTAL_DAYS = 30;
+        const TG_CHANNEL = 'https://t.me/+ZbtgpDqcnTVlNTA6';
+        const TG_KATYA = 'https://t.me/ginger_coach4you';
 
         const ALL_VALUES = [
-            'Свобода', 'Безопасность', 'Любовь', 'Принятие', 'Честность',
-            'Уважение', 'Развитие', 'Творчество', 'Семья', 'Здоровье',
-            'Дружба', 'Признание', 'Покой', 'Приключения', 'Стабильность',
-            'Забота', 'Благодарность', 'Осознанность', 'Радость', 'Смысл',
-            'Ответственность', 'Лёгкость', 'Доверие', 'Щедрость', 'Уединение',
-            'Общность', 'Смелость', 'Нежность', 'Справедливость', 'Верность',
-            'Спонтанность', 'Порядок', 'Уют', 'Статус', 'Служение'
+            'Свобода','Безопасность','Любовь','Принятие','Честность','Уважение','Развитие','Творчество','Семья','Здоровье',
+            'Дружба','Признание','Покой','Приключения','Стабильность','Забота','Благодарность','Осознанность','Радость','Смысл',
+            'Ответственность','Лёгкость','Доверие','Щедрость','Уединение','Общность','Смелость','Нежность','Справедливость','Верность',
+            'Спонтанность','Порядок','Уют','Статус','Служение'
         ];
 
         const FEELINGS = [
-            { id: 'fear', emoji: '😨', name: 'Страх', tagline: 'Мне страшно. А значит — важно.' },
-            { id: 'anger', emoji: '🔥', name: 'Злость', tagline: 'Я злюсь. А значит — мне не всё равно.' },
-            { id: 'guilt', emoji: '😞', name: 'Вина', tagline: 'Я чувствую вину. А значит — мне важны отношения.' },
-            { id: 'shame', emoji: '🫣', name: 'Стыд', tagline: 'Мне стыдно. А значит — я хочу быть принятой.' },
-            { id: 'sadness', emoji: '💧', name: 'Печаль', tagline: 'Мне грустно. А значит — я что-то теряю.' },
-            { id: 'disgust', emoji: '😟', name: 'Отвращение', tagline: 'Мне неприятно. Значит — ценности под угрозой.' },
-            { id: 'despair', emoji: '🌪️', name: 'Отчаяние',
-                tagline: 'Я в отчаянии. Старые опоры рухнули, новые ещё не выросли.' },
-            { id: 'confusion', emoji: '😶', name: 'Растерянность', tagline: 'Я на перекрёстке, и это нормально.' },
-            { id: 'boredom', emoji: '😑', name: 'Скука', tagline: 'Старое больше не работает.' },
-            { id: 'envy', emoji: '🎯', name: 'Зависть', tagline: 'Я вижу, чего хочу.' },
-            { id: 'disappointment', emoji: '🎈', name: 'Разочарование', tagline: 'Иллюзия встретилась с реальностью.' },
-            { id: 'regret', emoji: '😔', name: 'Сожаление', tagline: 'Мне важно было бы иначе.' },
-            { id: 'resentment', emoji: '🦔', name: 'Обида', tagline: 'Меня не увидели там, где было важно.' },
-            { id: 'joy', emoji: '🌞', name: 'Радость', tagline: 'Я живая.' },
-            { id: 'interest', emoji: '🧠', name: 'Интерес', tagline: 'Я живой.' }
+            {id:'fear',emoji:'😨',name:'Страх',tagline:'Мне страшно. А значит — важно.'},
+            {id:'anger',emoji:'🔥',name:'Злость',tagline:'Я злюсь. А значит — мне не всё равно.'},
+            {id:'guilt',emoji:'😞',name:'Вина',tagline:'Я чувствую вину. А значит — мне важны отношения.'},
+            {id:'shame',emoji:'🫣',name:'Стыд',tagline:'Мне стыдно. А значит — я хочу быть принятой.'},
+            {id:'sadness',emoji:'💧',name:'Печаль',tagline:'Мне грустно. А значит — я что-то теряю.'},
+            {id:'disgust',emoji:'😟',name:'Отвращение',tagline:'Мне неприятно. Значит — ценности под угрозой.'},
+            {id:'despair',emoji:'🌪️',name:'Отчаяние',tagline:'Я в отчаянии. Старые опоры рухнули.'},
+            {id:'confusion',emoji:'😶',name:'Растерянность',tagline:'Я на перекрёстке, и это нормально.'},
+            {id:'boredom',emoji:'😑',name:'Скука',tagline:'Старое больше не работает.'},
+            {id:'envy',emoji:'🎯',name:'Зависть',tagline:'Я вижу, чего хочу.'},
+            {id:'disappointment',emoji:'🎈',name:'Разочарование',tagline:'Иллюзия встретилась с реальностью.'},
+            {id:'regret',emoji:'😔',name:'Сожаление',tagline:'Мне важно было бы иначе.'},
+            {id:'resentment',emoji:'🦔',name:'Обида',tagline:'Меня не увидели там, где было важно.'},
+            {id:'joy',emoji:'🌞',name:'Радость',tagline:'Я живая.'},
+            {id:'interest',emoji:'🧠',name:'Интерес',tagline:'Я живой.'}
         ];
 
         const HEAVY_FEELINGS = {
-            shame: {
-                title: '💭 Стыд',
-                body: 'Стыд часто говорит голосом из прошлого: «Ты какая-то не такая. Спрячься.»',
-                truth: 'Но стыд — это просто чувство. Оно не про то, кто ты есть. Оно про то, как когда-то тебя не приняли.',
-                note: 'Это чувство — не весь ты. Ты больше, чем стыд.'
-            },
-            despair: {
-                title: '🌪️ Отчаяние',
-                body: 'Отчаяние приходит, когда старые опоры рухнули, а новые ещё не выросли.',
-                truth: 'Это момент, когда старая карта кончилась. Ты не сломался — ты на перевале.',
-                note: 'Это чувство — не весь ты. Ты больше, чем отчаяние.'
-            },
-            guilt: {
-                title: '💭 Вина',
-                body: 'Вина говорит: «Ты сделала что-то не так. Ты подвела.»',
-                truth: 'Но вина — это сигнал, что тебе важны отношения. Ты хочешь быть в связи с другими.',
-                note: 'Это чувство — не весь ты. Ты больше, чем вина.'
-            },
-            resentment: {
-                title: '🦔 Обида',
-                body: 'Обида — это когда больно, но сказать трудно. Когда тебя не увидели там, где было важно.',
-                truth: 'Обида говорит о твоей потребности быть замеченной. Это честность.',
-                note: 'Это чувство — не весь ты. Ты больше, чем обида.'
-            },
-            fear: {
-                title: '😨 Страх',
-                body: 'Страх — это сторожевой пёс. Он оберегает то, что тебе дорого.',
-                truth: 'Страх говорит: «Здесь что-то важное». Он помогает двигаться осознанно.',
-                note: 'Это чувство — не весь ты. Ты больше, чем страх.'
-            }
+            shame:{title:'💭 Стыд',body:'Стыд часто говорит голосом из прошлого: «Ты какая-то не такая. Спрячься.»',truth:'Но стыд — это просто чувство. Оно не про то, кто ты есть. Оно про то, как когда-то тебя не приняли.',note:'Это чувство — не весь ты. Ты больше, чем стыд.'},
+            despair:{title:'🌪️ Отчаяние',body:'Отчаяние приходит, когда старые опоры рухнули, а новые ещё не выросли.',truth:'Это момент, когда старая карта кончилась. Ты не сломался — ты на перевале.',note:'Это чувство — не весь ты. Ты больше, чем отчаяние.'},
+            guilt:{title:'💭 Вина',body:'Вина говорит: «Ты сделала что-то не так. Ты подвела.»',truth:'Но вина — это сигнал, что тебе важны отношения. Ты хочешь быть в связи с другими.',note:'Это чувство — не весь ты. Ты больше, чем вина.'},
+            resentment:{title:'🦔 Обида',body:'Обида — это когда больно, но сказать трудно. Когда тебя не увидели там, где было важно.',truth:'Обида говорит о твоей потребности быть замеченной. Это честность.',note:'Это чувство — не весь ты. Ты больше, чем обида.'},
+            fear:{title:'😨 Страх',body:'Страх — это сторожевой пёс. Он оберегает то, что тебе дорого.',truth:'Страх говорит: «Здесь что-то важное». Он помогает двигаться осознанно.',note:'Это чувство — не весь ты. Ты больше, чем страх.'}
         };
 
         const SUPPORT_PHRASES = {
-            low: [
-                'Спад — часть пути, а не ошибка. Что бы ты сказал другу, который прошёл столько же?',
-                'Не каждый день будет лёгким. Но ты здесь — и это уже победа.',
-                'Иногда шаг назад — это способ разбежаться. Ты всё ещё на пути.'
-            ],
-            high: [
-                'Ты на верном пути. Запомни, что помогло сегодня.',
-                'Сегодня твой след особенно глубокий. Ты выбрал себя.',
-                'Заметь этот момент. Ты выбрал себя сегодня — и это сработало.'
-            ],
-            return: [
-                'Ты вернулся. Это главное. Путь не стёрся — он ждал тебя.',
-                'Ты здесь. И это важнее, чем все пропущенные дни.',
-                'Каждый день — новый шанс. Сегодня ты им воспользовался.'
-            ]
+            low:['Спад — часть пути, а не ошибка. Что бы ты сказал другу, который прошёл столько же?','Не каждый день будет лёгким. Но ты здесь — и это уже победа.','Иногда шаг назад — это способ разбежаться. Ты всё ещё на пути.'],
+            high:['Ты на верном пути. Запомни, что помогло сегодня.','Сегодня твой след особенно глубокий. Ты выбрал себя.','Заметь этот момент. Ты выбрал себя сегодня — и это сработало.'],
+            return:['Ты вернулся. Это главное. Путь не стёрся — он ждал тебя.','Ты здесь. И это важнее, чем все пропущенные дни.','Каждый день — новый шанс. Сегодня ты им воспользовался.']
         };
-
-        // ==================== УПРАВЛЕНИЕ СОСТОЯНИЕМ ====================
 
         function getDefaultState() {
             return {
-                screen: 'create_wanderer',
-                wandererName: '',
-                wandererEmoji: '',
-                goal: '',
-                goalHistory: [],
-                values: [],
-                tempo: '',
-                startDate: null,
-                days: {},
-                weeklyIdentity: {},
-                gratitudeGarden: [],
-                lastActiveDate: null,
-                completedCycles: 0,
-                sharingHistory: [],
-                currentViewDay: null
+                screen:'create_wanderer',wandererName:'',wandererEmoji:'',goal:'',goalHistory:[],values:[],tempo:'',
+                startDate:null,days:{},weeklyIdentity:{},gratitudeGarden:[],lastActiveDate:null,
+                completedCycles:0,sharingHistory:[],currentViewDay:null,_maelstromShown:false
             };
         }
 
         function loadState() {
             const raw = localStorage.getItem(STORAGE_KEY);
-            if (raw) {
-                try { const s = JSON.parse(raw); return { ...getDefaultState(), ...s }; } catch (e) {}
-            }
+            if(raw){try{const s=JSON.parse(raw);return{...getDefaultState(),...s};}catch(e){}}
             return getDefaultState();
         }
-
-        function saveState(state) {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-        }
-
+        function saveState(state){localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}
         let state = loadState();
 
-        // ==================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ====================
-
         function getTodayDayNumber() {
-            if (!state.startDate) return 0;
-            const start = new Date(state.startDate);
-            const today = new Date();
-            const diff = Math.floor((today - start) / (1000 * 60 * 60 * 24)) + 1;
-            return Math.max(1, Math.min(TOTAL_DAYS, diff));
+            if(!state.startDate) return 0;
+            const start=new Date(state.startDate),today=new Date();
+            const diff=Math.floor((today-start)/(1000*60*60*24))+1;
+            return Math.max(1,Math.min(TOTAL_DAYS,diff));
         }
-
         function getDaysSinceLastActive() {
-            if (!state.lastActiveDate) return 0;
-            const last = new Date(state.lastActiveDate);
-            const today = new Date();
-            return Math.floor((today - last) / (1000 * 60 * 60 * 24));
+            if(!state.lastActiveDate) return 0;
+            const last=new Date(state.lastActiveDate),today=new Date();
+            return Math.floor((today-last)/(1000*60*60*24));
         }
-
         function getProgress() {
-            const today = getTodayDayNumber();
-            const completed = Object.keys(state.days).length;
-            const total = TOTAL_DAYS;
-            const remaining = Math.max(0, total - today);
-            const percent = today > 0 ? Math.round((completed / today) * 100) : 0;
-            return { total, completed, remaining, percent, today };
+            const today=getTodayDayNumber(),completed=Object.keys(state.days).length;
+            const total=TOTAL_DAYS,remaining=Math.max(0,total-today);
+            const percent=today>0?Math.round((completed/today)*100):0;
+            return {total,completed,remaining,percent,today};
         }
-
-        function getCurrentWeekNumber() {
-            const today = getTodayDayNumber();
-            return Math.ceil(today / 7);
-        }
-
+        function getCurrentWeekNumber(){return Math.ceil(getTodayDayNumber()/7);}
         function formatDate(dayNumber) {
-            if (!state.startDate) return `День ${dayNumber}`;
-            const start = new Date(state.startDate);
-            start.setDate(start.getDate() + dayNumber - 1);
-            const months = [
-                'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-                'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
-            ];
+            if(!state.startDate) return `День ${dayNumber}`;
+            const start=new Date(state.startDate);start.setDate(start.getDate()+dayNumber-1);
+            const months=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
             return `${start.getDate()} ${months[start.getMonth()]}`;
         }
+        function getRandomPhrase(cat){const p=SUPPORT_PHRASES[cat];return p[Math.floor(Math.random()*p.length)];}
+        function escapeHtml(s){if(!s)return '';const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 
-        function getRandomPhrase(category) {
-            const phrases = SUPPORT_PHRASES[category];
-            return phrases[Math.floor(Math.random() * phrases.length)];
+        function showToast(msg) {
+            const t=document.createElement('div');t.className='toast';t.textContent=msg;
+            document.body.appendChild(t);setTimeout(()=>t.remove(),2500);
         }
-
-        function escapeHtml(str) {
-            if (!str) return '';
-            const div = document.createElement('div');
-            div.textContent = str;
-            return div.innerHTML;
-        }
-
-        // ==================== РЕНДЕРИНГ ====================
 
         function render() {
-            const app = document.getElementById('app');
-            state.lastActiveDate = new Date().toISOString().split('T')[0];
+            const app=document.getElementById('app');
+            state.lastActiveDate=new Date().toISOString().split('T')[0];
             saveState(state);
 
-            // Проверка на возвращение после пропуска
-            const daysAway = getDaysSinceLastActive();
-            if (daysAway >= 3 && state.screen === 'trail' && state.startDate && getTodayDayNumber() > 1) {
-                app.innerHTML = renderReturnScreen();
-                attachListeners();
-                return;
+            const daysAway=getDaysSinceLastActive();
+            if(daysAway>=3 && state.screen==='trail' && state.startDate && getTodayDayNumber()>1){
+                app.innerHTML=renderReturnScreen();attachListeners();return;
             }
 
-            switch (state.screen) {
-                case 'create_wanderer':
-                    app.innerHTML = renderCreateWanderer();
-                    break;
-                case 'choose_tempo':
-                    app.innerHTML = renderChooseTempo();
-                    break;
-                case 'set_goal':
-                    app.innerHTML = renderSetGoal();
-                    break;
-                case 'set_values':
-                    app.innerHTML = renderSetValues();
-                    break;
-                case 'trail':
-                    app.innerHTML = renderTrail();
-                    break;
-                case 'daily_card':
-                    app.innerHTML = renderDailyCard(state.currentViewDay || getTodayDayNumber());
-                    break;
-                case 'review_day':
-                    app.innerHTML = renderReviewDay(state.currentViewDay);
-                    break;
-                case 'completed':
-                    app.innerHTML = renderSummary();
-                    break;
-                default:
-                    app.innerHTML = renderTrail();
+            switch(state.screen){
+                case 'create_wanderer':app.innerHTML=renderCreateWanderer();break;
+                case 'choose_tempo':app.innerHTML=renderChooseTempo();break;
+                case 'set_goal':app.innerHTML=renderSetGoal();break;
+                case 'set_values':app.innerHTML=renderSetValues();break;
+                case 'trail':app.innerHTML=renderTrail();break;
+                case 'daily_card':app.innerHTML=renderDailyCard(state.currentViewDay||getTodayDayNumber());break;
+                case 'missed_day':app.innerHTML=renderMissedDay(state.currentViewDay);break;
+                case 'review_day':app.innerHTML=renderReviewDay(state.currentViewDay);break;
+                case 'completed':app.innerHTML=renderSummary();break;
+                default:app.innerHTML=renderTrail();
             }
-
             attachListeners();
         }
 
-        // ==================== ЭКРАНЫ ====================
-
         function renderCreateWanderer() {
-            const hasHistory = state.completedCycles > 0;
-            return `
-                <div class="card" style="text-align:center;">
-                    <div style="font-size:56px;margin-bottom:12px;">🧭</div>
-                    <h2>Навигатор моего пути к цели</h2>
-                    <p class="text-muted mb-16">
-                        Привет. Я — твой Навигатор.<br>
-                        У каждого пути есть тот, кто идёт.
-                    </p>
-                    ${hasHistory ? `
-                        <div class="return-banner">
-                            <h3>🌟 С возвращением!</h3>
-                            <p class="text-muted">Ты уже прошёл ${state.completedCycles} ${state.completedCycles === 1 ? 'месяц' : state.completedCycles < 5 ? 'месяца' : 'месяцев'} с Навигатором.</p>
-                        </div>
-                    ` : ''}
-                    <label style="text-align:left;">Как зовут твоего путника?</label>
-                    <p class="text-muted" style="font-size:12px;text-align:left;margin-top:-4px;">Можешь написать своё имя или придумать персонажа. Например: Лира, Эо, Странник...</p>
-                    <input type="text" id="wandererName" placeholder="Имя путника" value="${escapeHtml(state.wandererName)}" maxlength="30" autocomplete="off">
-                    <label style="text-align:left;margin-top:16px;">Выбери образ:</label>
-                    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;" id="emojiPicker">
-                        ${['🦊','🐢','🌿','⭐','🌊','🔥','🕯️','🫧','🐉','🪶','🐚','🪐','🌙','🦉','🐺','🌸'].map(emoji => `
-                            <button class="feeling-chip ${state.wandererEmoji === emoji ? 'selected' : ''}" data-emoji="${emoji}" style="font-size:24px;padding:10px 14px;">${emoji}</button>
-                        `).join('')}
-                    </div>
-                    <button class="btn btn-primary mt-12" id="btnStartWanderer">Дальше</button>
+            const hasHistory=state.completedCycles>0;
+            return `<div class="card" style="text-align:center;">
+                <div style="font-size:56px;margin-bottom:12px;">🧭</div>
+                <h2>Навигатор моего пути к цели</h2>
+                <p class="text-muted mb-16">Привет. Я — твой Навигатор.<br>У каждого пути есть тот, кто идёт.</p>
+                ${hasHistory?`<div class="return-banner"><h3>🌟 С возвращением!</h3><p class="text-muted">Ты уже прошёл ${state.completedCycles} ${state.completedCycles===1?'месяц':state.completedCycles<5?'месяца':'месяцев'} с Навигатором.</p></div>`:''}
+                <label style="text-align:left;">Как зовут твоего путника?</label>
+                <p class="text-muted" style="font-size:12px;text-align:left;margin-top:-4px;">Например: Лира, Эо, Странник...</p>
+                <input type="text" id="wandererName" placeholder="Имя путника" value="${escapeHtml(state.wandererName)}" maxlength="30" autocomplete="off">
+                <label style="text-align:left;margin-top:16px;">Выбери образ:</label>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;" id="emojiPicker">
+                    ${['🦊','🐢','🌿','⭐','🌊','🔥','🕯️','🫧','🐉','🪶','🐚','🪐','🌙','🦉','🐺','🌸'].map(e=>`<button class="feeling-chip ${state.wandererEmoji===e?'selected':''}" data-emoji="${e}" style="font-size:24px;padding:10px 14px;">${e}</button>`).join('')}
                 </div>
-            `;
+                <button class="btn btn-primary mt-12" id="btnStartWanderer">Дальше</button>
+            </div>`;
         }
 
         function renderChooseTempo() {
-            const isReturning = state.completedCycles > 0;
-            return `
-                <div class="card" style="text-align:center;">
-                    <div style="font-size:44px;">${state.wandererEmoji || '🧭'}</div>
-                    <h2>${state.wandererName || 'Путник'}, выбери темп</h2>
-                    <p class="text-muted mb-16">Ты можешь начать мягко или нырнуть глубоко. Как тебе комфортно?</p>
-                    <div class="tempo-options" id="tempoOptions">
-                        ${!isReturning ? `
-                        <button class="tempo-card" data-tempo="soft">
-                            <span class="tempo-icon">🌱</span>
-                            <span class="tempo-title">Мягкий старт</span>
-                            <span class="tempo-desc">День 1: персонаж. День 2: цель. День 3: ценности.</span>
-                        </button>
-                        <button class="tempo-card" data-tempo="confident">
-                            <span class="tempo-icon">🌿</span>
-                            <span class="tempo-title">Уверенный шаг</span>
-                            <span class="tempo-desc">Сегодня: персонаж + цель. Завтра: ценности.</span>
-                        </button>
-                        ` : ''}
-                        <button class="tempo-card" data-tempo="deep">
-                            <span class="tempo-icon">🌳</span>
-                            <span class="tempo-title">${isReturning ? 'Быстрый старт' : 'Глубокое погружение'}</span>
-                            <span class="tempo-desc">${isReturning ? 'Цель + ценности сразу. Ты знаешь, куда идёшь.' : 'Всё сегодня: персонаж + цель + ценности.'}</span>
-                        </button>
-                    </div>
-                    <button class="btn btn-primary mt-12 hidden" id="btnConfirmTempo">Продолжить</button>
+            const isReturning=state.completedCycles>0;
+            return `<div class="card" style="text-align:center;">
+                <div style="font-size:44px;">${state.wandererEmoji||'🧭'}</div>
+                <h2>${state.wandererName||'Путник'}, выбери темп</h2>
+                <p class="text-muted mb-16">Ты можешь начать мягко или нырнуть глубоко. Как тебе комфортно?</p>
+                <div class="tempo-options" id="tempoOptions">
+                    ${!isReturning?`<button class="tempo-card" data-tempo="soft"><span class="tempo-icon">🌱</span><span class="tempo-title">Мягкий старт</span><span class="tempo-desc">День 1: персонаж. День 2: цель. День 3: ценности.</span></button>
+                    <button class="tempo-card" data-tempo="confident"><span class="tempo-icon">🌿</span><span class="tempo-title">Уверенный шаг</span><span class="tempo-desc">Сегодня: персонаж + цель. Завтра: ценности.</span></button>`:''}
+                    <button class="tempo-card" data-tempo="deep"><span class="tempo-icon">🌳</span><span class="tempo-title">${isReturning?'Быстрый старт':'Глубокое погружение'}</span><span class="tempo-desc">${isReturning?'Цель + ценности сразу. Ты знаешь, куда идёшь.':'Всё сегодня: персонаж + цель + ценности.'}</span></button>
                 </div>
-            `;
+                <button class="btn btn-primary mt-12 hidden" id="btnConfirmTempo">Продолжить</button>
+            </div>`;
         }
 
         function renderSetGoal() {
-            return `
-                <div class="card">
-                    <div style="text-align:center;font-size:40px;margin-bottom:8px;">${state.wandererEmoji || '🧭'}</div>
-                    <h2 style="text-align:center;">${state.wandererName || 'Путник'}, что ты хочешь?</h2>
-                    <p class="text-muted text-center mb-16">
-                        Сформулируй одним предложением: что ты хочешь изменить или создать в своей жизни?
-                    </p>
-                    ${state.goal && state.completedCycles > 0 ? `
-                        <div class="summary-section mb-12">
-                            <p style="font-size:12px;color:var(--text-light);">Прошлая цель:</p>
-                            <p style="font-size:14px;">${escapeHtml(state.goal)}</p>
-                        </div>
-                    ` : ''}
-                    <textarea id="goalInput" placeholder="Я хочу...">${escapeHtml(state.goal)}</textarea>
-                    <p class="text-muted text-center mt-8" style="font-size:12px;">Цель может дышать и меняться. Это нормально.</p>
-                    <button class="btn btn-primary mt-12" id="btnSaveGoal">
-                        ${state.tempo === 'deep' || state.tempo === 'confident' ? 'Дальше — к ценностям' : 'Начать путь'}
-                    </button>
-                </div>
-            `;
+            return `<div class="card">
+                <div style="text-align:center;font-size:40px;margin-bottom:8px;">${state.wandererEmoji||'🧭'}</div>
+                <h2 style="text-align:center;">${state.wandererName||'Путник'}, что ты хочешь?</h2>
+                <p class="text-muted text-center mb-16">Сформулируй одним предложением: что ты хочешь изменить или создать?</p>
+                ${state.goal&&state.completedCycles>0?`<div class="summary-section mb-12"><p style="font-size:12px;color:var(--text-light);">Прошлая цель:</p><p style="font-size:14px;">${escapeHtml(state.goal)}</p></div>`:''}
+                <textarea id="goalInput" placeholder="Я хочу...">${escapeHtml(state.goal)}</textarea>
+                <p class="text-muted text-center mt-8" style="font-size:12px;">Цель может дышать и меняться. Это нормально.</p>
+                <button class="btn btn-primary mt-12" id="btnSaveGoal">${state.tempo==='deep'||state.tempo==='confident'?'Дальше — к ценностям':'Начать путь'}</button>
+            </div>`;
         }
 
         function renderSetValues() {
-            const selected = state.values || [];
-            return `
-                <div class="card">
-                    <h2 style="text-align:center;">🧭 Компас ценностей</h2>
-                    <p class="text-muted text-center mb-16">
-                        Выбери 3 ценности, важные для тебя прямо сейчас.<br>
-                        Они будут твоим компасом на пути.
-                    </p>
-                    <div class="feelings-grid" id="valuesGrid">
-                        ${ALL_VALUES.map(v => `
-                            <button class="feeling-chip ${selected.includes(v) ? 'selected' : ''}" data-value="${v}">${v}</button>
-                        `).join('')}
-                    </div>
-                    <p class="text-muted text-center" id="valuesCount">Выбрано: ${selected.length} из 3</p>
-                    <button class="btn btn-primary mt-12" id="btnSaveValues" ${selected.length !== 3 ? 'disabled style="opacity:0.5;"' : ''}>
-                        Сохранить и выйти на путь
-                    </button>
+            const selected=state.values||[];
+            return `<div class="card">
+                <h2 style="text-align:center;">🧭 Компас ценностей</h2>
+                <p class="text-muted text-center mb-16">Выбери 3 ценности, важные для тебя прямо сейчас.</p>
+                <div class="feelings-grid" id="valuesGrid">
+                    ${ALL_VALUES.map(v=>`<button class="feeling-chip ${selected.includes(v)?'selected':''}" data-value="${v}">${v}</button>`).join('')}
                 </div>
-            `;
+                <p class="text-muted text-center" id="valuesCount">Выбрано: ${selected.length} из 3</p>
+                <button class="btn btn-primary mt-12" id="btnSaveValues" ${selected.length!==3?'disabled style="opacity:0.5;"':''}>Сохранить и выйти на путь</button>
+            </div>`;
         }
 
-        // ==================== ГЛАВНЫЙ ЭКРАН — ТРОПА ====================
-
         function renderTrail() {
-            const progress = getProgress();
-            const today = progress.today;
-            const isReturning = state.completedCycles > 0;
-            const showIdentityQuestion = today > 0 && today % 7 === 0 && !state.weeklyIdentity[getCurrentWeekNumber()];
-            const showGratitude = today > 0 && today % 3 === 0 && !state.gratitudeGarden.find(g => g.dayNumber === today) &&
-                state.days[today];
+            const progress=getProgress(),today=progress.today;
+            const allDays=Object.entries(state.days).map(([d,data])=>({day:parseInt(d),...data}));
+            const sortedDays=allDays.sort((a,b)=>a.day-b.day);
+            const scales=sortedDays.map(d=>d.scale||0);
+            const lastHeavyDay=sortedDays.filter(d=>d.feelings&&d.feelings.some(fid=>HEAVY_FEELINGS[fid])).pop();
+            const lastSelfSupport=sortedDays.filter(d=>d.selfSupport).pop();
+            const weekNumber=getCurrentWeekNumber();
+            const showIdentity=today>0&&today%7===0&&!state.weeklyIdentity[weekNumber];
+            const showGratitude=today>0&&today%3===0&&!state.gratitudeGarden.find(g=>g.dayNumber===today)&&state.days[today];
+            const showMaelstromWarning=today>=3&&today<=5&&!state._maelstromShown;
+            const totalFilled=Object.keys(state.days).length;
 
             return `
-                <!-- Инфо-карточка путника -->
                 <div class="card" style="padding:14px 18px;">
                     <div class="trail-header" style="margin-bottom:0;">
-                        <div class="trail-wanderer">${state.wandererEmoji || '🧭'}</div>
+                        <div class="trail-wanderer">${state.wandererEmoji||'🧭'}</div>
                         <div class="trail-info">
-                            <div class="trail-name">${state.wandererName || 'Путник'}</div>
-                            <div class="trail-goal">${state.goal || 'Цель ещё не задана'}</div>
-                            ${state.values.length > 0 ? `<div class="trail-compass">🧭 ${state.values.join(' • ')}</div>` : ''}
+                            <div class="trail-name">${state.wandererName||'Путник'}</div>
+                            <div class="trail-goal">${state.goal||'Цель ещё не задана'}</div>
+                            ${state.values.length>0?`<div class="trail-compass">🧭 ${state.values.join(' • ')}</div>`:''}
                         </div>
                     </div>
-                    ${today > 0 ? `
-                        <div class="progress-bar mt-8">
-                            <div class="progress-fill" style="width:${progress.percent}%;"></div>
-                        </div>
-                        <div class="progress-stats">
-                            <span>Прожито: ${progress.completed}</span>
-                            <span>Сегодня: день ${today}</span>
-                            <span>Осталось: ${progress.remaining}</span>
-                        </div>
-                    ` : ''}
+                    ${today>0?`<div class="progress-bar mt-8"><div class="progress-fill" style="width:${progress.percent}%;"></div></div>
+                    <div class="progress-stats"><span>Прожито: ${progress.completed}</span><span>Сегодня: день ${today}</span><span>Осталось: ${progress.remaining}</span></div>`:''}
                 </div>
 
-                <!-- Сетка шагов -->
                 <div class="card">
                     <h3 style="text-align:center;">👣 Твой путь</h3>
-                    <div class="steps-grid" id="stepsGrid">
-                        ${renderStepCells(today)}
-                    </div>
+                    <div class="steps-grid" id="stepsGrid">${renderStepCells(today)}</div>
                     <div class="legend">
                         <span class="legend-item"><span class="legend-dot green"></span> Прожито</span>
                         <span class="legend-item"><span class="legend-dot blue"></span> Сегодня</span>
                         <span class="legend-item"><span class="legend-dot gray"></span> Пропущено</span>
-                        <span class="legend-item">🔒 Будущее</span>
+                        <span>🔒 Будущее</span>
                     </div>
                 </div>
 
-                <!-- Действие дня -->
-                ${today > 0 ? `
-                    <div class="card text-center">
-                        ${state.days[today] ? `
-                            <p style="color:var(--green);font-weight:600;">✅ День ${today} уже прожит</p>
-                            <p class="text-muted" style="font-size:13px;">Приближение: ${state.days[today].scale}/10</p>
-                            <button class="btn btn-secondary btn-block mt-8" id="btnReviewToday">Посмотреть</button>
-                        ` : `
-                            <p style="font-weight:600;">Сегодня — день ${today}</p>
-                            <p class="text-muted mb-8" style="font-size:13px;">${formatDate(today)}</p>
-                            <button class="btn btn-primary btn-block" id="btnStartToday">Прожить этот день</button>
-                        `}
-                        <button class="btn btn-outline btn-sm btn-block mt-8" id="btnChangeGoal">Цель изменилась</button>
-                    </div>
-                ` : `
-                    <div class="card text-center">
-                        <p style="font-weight:600;font-size:18px;">🏁 Начало пути</p>
-                        <p class="text-muted">Ты готов начать. Твой путь ждёт.</p>
-                        <button class="btn btn-primary btn-block mt-8" id="btnStartJourney">Начать путь</button>
-                    </div>
-                `}
+                ${today>0?`<div class="card text-center">
+                    ${state.days[today]?`<p style="color:var(--green);font-weight:600;">✅ День ${today} уже прожит</p>
+                    <p class="text-muted" style="font-size:13px;">Приближение: ${state.days[today].scale}/10</p>
+                    ${state.days[today].scale>=8?`<p style="font-size:12px;color:var(--green);font-style:italic;">${getRandomPhrase('high')}</p>`:state.days[today].scale<=3?`<p style="font-size:12px;color:var(--accent);font-style:italic;">${getRandomPhrase('low')}</p>`:''}
+                    <button class="btn btn-secondary btn-block mt-8" id="btnReviewToday">Посмотреть</button>`:
+                    `<p style="font-weight:600;">Сегодня — день ${today}</p>
+                    <p class="text-muted mb-8" style="font-size:13px;">${formatDate(today)}</p>
+                    <button class="btn btn-primary btn-block" id="btnStartToday">Прожить этот день</button>`}
+                    <button class="btn btn-outline btn-sm btn-block mt-8" id="btnChangeGoal">Цель изменилась</button>
+                    ${state.days[today]?`<button class="btn btn-outline btn-sm btn-block mt-8" id="btnShareTodayInline">Поделиться днём с Катей</button>`:''}
+                </div>`:`<div class="card text-center">
+                    <p style="font-size:32px;">🌅</p>
+                    <p style="font-weight:600;font-size:18px;">Начало пути</p>
+                    <p class="text-muted">Ты готов начать. Твой путь ждёт.</p>
+                    <button class="btn btn-primary btn-block mt-8" id="btnStartJourney">Начать путь</button>
+                </div>`}
 
-                ${showIdentityQuestion ? renderIdentityQuestion(getCurrentWeekNumber()) : ''}
-                ${showGratitude ? renderGratitudeQuestion(today) : ''}
+                ${renderTrailBlocks(today,lastHeavyDay,lastSelfSupport,showIdentity,showGratitude,showMaelstromWarning,totalFilled,sortedDays,scales)}
 
-                <!-- Ссылка -->
                 <div class="text-center mt-16" style="padding:12px;background:var(--accent-light);border-radius:var(--radius-sm);">
-                    <p style="font-size:12px;color:var(--accent);">
-                        Чувств больше, чем кажется — <a href="https://t.me/ginger_coach4you" target="_blank" style="color:var(--accent);font-weight:600;">«Разрешаю себе чувствовать»</a>
-                    </p>
+                    <p style="font-size:12px;color:var(--accent);">Чувств больше, чем кажется — <a href="${TG_CHANNEL}" target="_blank" style="color:var(--accent);font-weight:600;">«Разрешаю себе чувствовать»</a></p>
                 </div>
             `;
         }
 
         function renderStepCells(today) {
-            let cells = '';
-            // Стартовая ячейка
-            cells += `<div class="step-cell start" title="Начало пути">🏁</div>`;
-            for (let d = 1; d <= TOTAL_DAYS; d++) {
-                let cls = '';
-                let content = d;
-                let title = `День ${d}`;
-                if (state.days[d]) {
-                    cls = 'completed';
-                    content = '⭐';
-                    title = `День ${d} — прожит (${state.days[d].scale}/10)`;
-                } else if (d < today) {
-                    cls = 'missed';
-                    content = '🔒';
-                    title = `День ${d} — упущен`;
-                } else if (d === today) {
-                    cls = 'today';
-                    content = d;
-                    title = `Сегодня — день ${d}`;
-                } else {
-                    cls = 'future';
-                    content = '🔒';
-                    title = `День ${d} — ещё не наступил`;
-                }
-                cells += `<button class="step-cell ${cls}" data-day="${d}" title="${title}" ${cls === 'future' || cls === 'missed' ? 'disabled' : ''}>
-                    <span class="day-num">${d}</span>${content}
-                </button>`;
+            let cells='';
+            cells+=`<div class="step-cell start-cell" title="Старт">🌅</div>`;
+            for(let d=1;d<=TOTAL_DAYS;d++){
+                let cls='',content=d,title=`День ${d}`;
+                if(state.days[d]){cls='completed';content='⭐';title=`День ${d} — прожит (${state.days[d].scale}/10)`;}
+                else if(d<today){cls='missed';content='·';title=`День ${d} — упущен (нажми, чтобы прожить)`;}
+                else if(d===today){cls='today';content=d;title=`Сегодня — день ${d}`;}
+                else{cls='future';content='🔒';title=`День ${d} — ещё не наступил`;}
+                cells+=`<button class="step-cell ${cls}" data-day="${d}" title="${title}" ${cls==='future'?'disabled':''}><span class="day-num">${d}</span>${content}</button>`;
             }
+            cells+=`<div class="step-cell finish-cell" title="Финиш">🏁</div>`;
             return cells;
         }
 
-        // ==================== ЕЖЕДНЕВНАЯ КАРТОЧКА ====================
+        function renderTrailBlocks(today,lastHeavyDay,lastSelfSupport,showIdentity,showGratitude,showMaelstromWarning,totalFilled,sortedDays,scales) {
+            let html='';
 
-        function renderDailyCard(dayNumber) {
-            const data = state.days[dayNumber] || null;
-            const isCompleted = !!data;
-            return `
-                <div class="card">
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-                        <button class="btn btn-icon btn-outline btn-sm" id="btnBackToTrail" style="width:40px;height:40px;font-size:16px;">←</button>
-                        <div>
-                            <h3 style="margin:0;">День ${dayNumber}</h3>
-                            <p class="text-muted" style="font-size:12px;">${formatDate(dayNumber)}</p>
+            if(showMaelstromWarning){
+                html+=`<div class="trail-block accent">
+                    <div class="trail-block-header"><span class="trail-block-icon">🌊</span><strong>Заметка Навигатора</strong></div>
+                    <p style="font-size:13px;color:#6b5b4e;">Ты можешь заметить, что чувств стало больше. Или они стали острее. Это нормально. Это не регресс — это ты начинаешь слышать то, что раньше заглушал. Так бывает, когда входишь в тишину после долгого шума.</p>
+                    <button class="btn btn-sm btn-outline mt-8" id="btnMaelstromOk">Понял(а), спасибо</button>
+                </div>`;
+            }
+
+            if(lastHeavyDay){
+                const heavyFid=lastHeavyDay.feelings.find(fid=>HEAVY_FEELINGS[fid]);
+                if(heavyFid){
+                    const hf=HEAVY_FEELINGS[heavyFid];
+                    html+=`<div class="trail-block accent">
+                        <div class="trail-block-header"><span class="trail-block-icon">🫂</span><strong>Контейнер поддержки</strong></div>
+                        <div class="container-box" style="margin:0;background:transparent;border:none;padding:8px 0;">
+                            <h4>${hf.title}</h4><p>${hf.body}</p><p><strong>${hf.truth}</strong></p><p class="note">${hf.note}</p>
                         </div>
-                    </div>
-                    ${isCompleted ? renderCompletedDayContent(dayNumber, data) : renderTodayForm(dayNumber)}
-                </div>
-            `;
+                        <a href="${TG_KATYA}" target="_blank" class="btn btn-accent btn-sm mt-8">Мне нужно больше поддержки</a>
+                    </div>`;
+                }
+            }
+
+            if(scales.length>=5){
+                html+=`<div class="trail-block blue">
+                    <div class="trail-block-header"><span class="trail-block-icon">📈</span><strong>Динамика пути</strong></div>
+                    <div class="mini-chart">${scales.map(s=>`<div class="mini-chart-bar" style="height:${s*10}%;" title="${s}/10"></div>`).join('')}</div>
+                    <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-light);"><span>Д1</span><span>Д${scales.length}</span></div>
+                </div>`;
+            }
+
+            if(lastSelfSupport){
+                html+=`<div class="trail-block green">
+                    <div class="trail-block-header"><span class="trail-block-icon">🤲</span><strong>Моя самоподдержка</strong></div>
+                    <p style="font-size:13px;">Последний способ: «${escapeHtml(lastSelfSupport.selfSupport.substring(0,100))}${lastSelfSupport.selfSupport.length>100?'…':''}»</p>
+                    <button class="btn btn-sm btn-outline mt-8" id="btnAddSelfSupport">Добавить новый</button>
+                </div>`;
+            }
+
+            if(showIdentity){
+                html+=`<div class="trail-block purple">
+                    <div class="trail-block-header"><span class="trail-block-icon">🪞</span><strong>Кто я сейчас?</strong></div>
+                    <p class="text-muted" style="font-size:13px;">Прошла ещё неделя. Ты меняешься.</p>
+                    <textarea id="identityInputTrail" placeholder="Я — тот, кто...">${state.weeklyIdentity[getCurrentWeekNumber()]||''}</textarea>
+                    <button class="btn btn-primary btn-sm mt-8" id="btnSaveIdentityTrail">Сохранить</button>
+                </div>`;
+            }
+
+            if(showGratitude){
+                html+=`<div class="trail-block green">
+                    <div class="trail-block-header"><span class="trail-block-icon">🌸</span><strong>Сад благодарности</strong></div>
+                    <p class="text-muted" style="font-size:13px;">Что ценного было в этих днях?</p>
+                    <textarea id="gratitudeInputTrail" placeholder="Я благодарен(на) за..."></textarea>
+                    <button class="btn btn-primary btn-sm mt-8" id="btnSaveGratitudeTrail">Добавить в сад</button>
+                </div>`;
+            }
+
+            if(totalFilled>0){
+                const allFeelings={};
+                sortedDays.forEach(d=>{if(d.feelings)d.feelings.forEach(fid=>{allFeelings[fid]=(allFeelings[fid]||0)+1;});});
+                const topFeelings=Object.entries(allFeelings).sort((a,b)=>b[1]-a[1]).slice(0,5);
+                if(topFeelings.length>0){
+                    html+=`<div class="trail-block blue">
+                        <div class="trail-block-header"><span class="trail-block-icon">🎨</span><strong>Мои чувства</strong></div>
+                        <div style="display:flex;gap:6px;flex-wrap:wrap;">${topFeelings.map(([fid,c])=>{const f=FEELINGS.find(ff=>ff.id===fid);return f?`<span class="badge badge-primary">${f.emoji} ${f.name} ${c}</span>`:'';}).join('')}</div>
+                        <a href="${TG_CHANNEL}" target="_blank" class="btn btn-sm btn-outline mt-8" style="font-size:11px;">Разрешаю себе чувствовать →</a>
+                    </div>`;
+                }
+            }
+
+            if(totalFilled>=7){
+                html+=`<div class="trail-block accent text-center">
+                    <p style="font-size:13px;margin-bottom:6px;">Пройдена неделя. Хочешь поделиться с Катей?</p>
+                    <button class="btn btn-sm btn-outline" id="btnShareWeek">Поделиться неделей</button>
+                </div>`;
+            }
+
+            return html;
         }
 
-        function renderCompletedDayContent(dayNumber, data) {
-            const scale = data.scale || 0;
-            const f = data.feelings ? data.feelings.map(fid => FEELINGS.find(ff => ff.id === fid)).filter(Boolean) : [];
-            return `
-                <div style="text-align:center;margin:12px 0;">
-                    <span style="font-size:40px;">⭐</span>
-                    <p style="font-weight:700;color:var(--green);">День прожит!</p>
-                    <p>Приближение: <strong>${scale}/10</strong></p>
+        function renderDailyCard(dayNumber) {
+            const data=state.days[dayNumber]||null;
+            return `<div class="card">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+                    <button class="btn btn-icon btn-outline btn-sm" id="btnBackToTrail" style="width:40px;height:40px;font-size:16px;">←</button>
+                    <div><h3 style="margin:0;">День ${dayNumber}</h3><p class="text-muted" style="font-size:12px;">${formatDate(dayNumber)}</p></div>
                 </div>
-                ${f.length > 0 ? `<p><strong>Чувства:</strong> ${f.map(ff => ff.emoji + ' ' + ff.name).join(', ')}</p>` : ''}
-                ${data.insight ? `<p><strong>💡 Инсайт:</strong> ${escapeHtml(data.insight)}</p>` : ''}
-                ${data.win ? `<p><strong>🌟 Победа:</strong> ${escapeHtml(data.win)}</p>` : ''}
-                ${data.selfSupport ? `<p><strong>🤲 Самоподдержка:</strong> ${escapeHtml(data.selfSupport)}</p>` : ''}
-                ${data.sessionNote ? `<p><strong>💬 На сессию с Катей:</strong> ${escapeHtml(data.sessionNote)}</p>` : ''}
+                ${data?renderCompletedDayContent(dayNumber,data):renderTodayForm(dayNumber)}
+            </div>`;
+        }
+
+        function renderMissedDay(dayNumber) {
+            return `<div class="card" style="text-align:center;">
+                <div style="font-size:40px;margin-bottom:8px;">🌫️</div>
+                <h3>День ${dayNumber} — ${formatDate(dayNumber)}</h3>
+                <p class="text-muted mb-8">Этот день прошёл. Но ты можешь прожить его сейчас — не для галочки, а для себя.</p>
+                <p style="font-size:13px;color:var(--accent);font-style:italic;">«Ты вернулся. Это главное. День ждал тебя.»</p>
+                <button class="btn btn-primary btn-block mt-12" id="btnLiveMissed">Прожить этот день</button>
+                <button class="btn btn-outline btn-block mt-8" id="btnBackToTrail">← Вернуться на путь</button>
+            </div>`;
+        }
+
+        function renderReviewDay(dayNumber) {
+            const data=state.days[dayNumber];
+            if(!data){state.screen='trail';saveState(state);render();return'';}
+            return `<div class="card">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+                    <button class="btn btn-icon btn-outline btn-sm" id="btnBackToTrail" style="width:40px;height:40px;font-size:16px;">←</button>
+                    <h3 style="margin:0;">День ${dayNumber} — ${formatDate(dayNumber)}</h3>
+                </div>
+                ${renderCompletedDayContent(dayNumber,data)}
+            </div>`;
+        }
+
+        function renderCompletedDayContent(dayNumber,data) {
+            const scale=data.scale||0;
+            const f=data.feelings?data.feelings.map(fid=>FEELINGS.find(ff=>ff.id===fid)).filter(Boolean):[];
+            return `
+                <div style="text-align:center;margin:12px 0;"><span style="font-size:40px;">⭐</span>
+                <p style="font-weight:700;color:var(--green);">День прожит!</p>
+                <p>Приближение: <strong>${scale}/10</strong></p></div>
+                ${f.length>0?`<p><strong>Чувства:</strong> ${f.map(ff=>ff.emoji+' '+ff.name).join(', ')}</p>`:''}
+                ${data.thought?`<p><strong>Мысль дня:</strong> ${escapeHtml(data.thought)}</p>`:''}
+                ${data.thoughtCheck?`<p><strong>Факт или интерпретация:</strong> ${escapeHtml(data.thoughtCheck)}</p>`:''}
+                ${data.thoughtAlt?`<p><strong>Другой взгляд:</strong> ${escapeHtml(data.thoughtAlt)}</p>`:''}
+                ${data.helped?`<p><strong>Что приблизило:</strong> ${escapeHtml(data.helped)}</p>`:''}
+                ${data.hindered?`<p><strong>Что отдалило:</strong> ${escapeHtml(data.hindered)}</p>`:''}
+                ${data.insight?`<p><strong>💡 Инсайт:</strong> ${escapeHtml(data.insight)}</p>`:''}
+                ${data.win?`<p><strong>🌟 Победа:</strong> ${escapeHtml(data.win)}</p>`:''}
+                ${data.selfSupport?`<p><strong>🤲 Самоподдержка:</strong> ${escapeHtml(data.selfSupport)}</p>`:''}
+                ${data.sessionNote?`<p><strong>💬 На сессию с Катей:</strong> ${escapeHtml(data.sessionNote)}</p>`:''}
                 <button class="btn btn-outline btn-sm btn-block mt-8" id="btnShareDay">Поделиться с Катей</button>
                 <button class="btn btn-secondary btn-block mt-8" id="btnBackToTrail2">← Вернуться на путь</button>
             `;
         }
 
         function renderTodayForm(dayNumber) {
-            return `
-                <div id="dailyForm">
-                    <label>Насколько день приблизил тебя к цели?</label>
-                    <div class="scale-row" id="scaleRow">
-                        ${[1,2,3,4,5,6,7,8,9,10].map(n => `
-                            <button class="scale-btn" data-scale="${n}">${n}</button>
-                        `).join('')}
-                    </div>
-
-                    <label>Какие чувства были сегодня?</label>
-                    <div class="feelings-scroll">
-                        <div class="feelings-grid" id="feelingsGrid">
-                            ${FEELINGS.map(f => `
-                                <button class="feeling-chip" data-feeling="${f.id}" title="${f.tagline}">${f.emoji} ${f.name}</button>
-                            `).join('')}
-                        </div>
-                    </div>
-                    <div id="heavyFeelingContainer"></div>
-
-                    <label>Какая мысль крутилась в голове?</label>
-                    <textarea id="thoughtInput" placeholder="О чём ты думал(а) сегодня?"></textarea>
-                    <div id="thoughtCheck" class="hidden"></div>
-
-                    <label>Что сегодня сработало, помогло, поддержало?</label>
-                    <textarea id="helpedInput" placeholder="Что приблизило к цели?"></textarea>
-
-                    <label>Что мешало, сбивало, отнимало энергию?</label>
-                    <textarea id="hinderedInput" placeholder="Что отдалило от цели?"></textarea>
-
-                    <label>💡 Инсайт дня</label>
-                    <textarea id="insightInput" placeholder="Что я понял(а) сегодня?"></textarea>
-
-                    <label>🌟 Маленькая победа</label>
-                    <textarea id="winInput" placeholder="За что я могу себя поблагодарить?"></textarea>
-
-                    <label>🤲 Как я могу сам(а) поддержать себя?</label>
-                    <textarea id="selfSupportInput" placeholder="Что бы я сказал(а) другу? Что мне нужно?"></textarea>
-
-                    <label>💬 Что я хочу вынести на сессию с Катей?</label>
-                    <textarea id="sessionNoteInput" placeholder="Вопрос или чувство для обсуждения"></textarea>
-
-                    <button class="btn btn-primary mt-12" id="btnSaveDay">Сохранить день</button>
-                </div>
-            `;
-        }
-
-        function renderReviewDay(dayNumber) {
-            const data = state.days[dayNumber];
-            if (!data) {
-                state.screen = 'trail';
-                saveState(state);
-                render();
-                return '';
-            }
-            const f = data.feelings ? data.feelings.map(fid => FEELINGS.find(ff => ff.id === fid)).filter(Boolean) : [];
-            return `
-                <div class="card">
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-                        <button class="btn btn-icon btn-outline btn-sm" id="btnBackToTrail" style="width:40px;height:40px;font-size:16px;">←</button>
-                        <h3 style="margin:0;">День ${dayNumber} — ${formatDate(dayNumber)}</h3>
-                    </div>
-                    <p><strong>Приближение:</strong> ${data.scale}/10</p>
-                    ${f.length > 0 ? `<p><strong>Чувства:</strong> ${f.map(ff => ff.emoji + ' ' + ff.name).join(', ')}</p>` : ''}
-                    ${data.thought ? `<p><strong>Мысль дня:</strong> ${escapeHtml(data.thought)}</p>` : ''}
-                    ${data.thoughtCheck ? `<p><strong>Факт или интерпретация:</strong> ${escapeHtml(data.thoughtCheck)}</p>` : ''}
-                    ${data.thoughtAlt ? `<p><strong>Другой взгляд:</strong> ${escapeHtml(data.thoughtAlt)}</p>` : ''}
-                    ${data.helped ? `<p><strong>Что приблизило:</strong> ${escapeHtml(data.helped)}</p>` : ''}
-                    ${data.hindered ? `<p><strong>Что отдалило:</strong> ${escapeHtml(data.hindered)}</p>` : ''}
-                    ${data.insight ? `<p><strong>💡 Инсайт:</strong> ${escapeHtml(data.insight)}</p>` : ''}
-                    ${data.win ? `<p><strong>🌟 Победа:</strong> ${escapeHtml(data.win)}</p>` : ''}
-                    ${data.selfSupport ? `<p><strong>🤲 Самоподдержка:</strong> ${escapeHtml(data.selfSupport)}</p>` : ''}
-                    ${data.sessionNote ? `<p><strong>💬 На сессию с Катей:</strong> ${escapeHtml(data.sessionNote)}</p>` : ''}
-                    <button class="btn btn-outline btn-sm btn-block mt-8" id="btnShareDay">Поделиться с Катей</button>
-                    <button class="btn btn-secondary btn-block mt-8" id="btnBackToTrail2">← Вернуться на путь</button>
-                </div>
-            `;
-        }
-
-        function renderIdentityQuestion(weekNumber) {
-            return `
-                <div class="card" style="background:#f8f6fa;border-color:#e0d8ea;">
-                    <h3>🪞 Кто я сейчас?</h3>
-                    <p class="text-muted" style="font-size:13px;">Прошла ещё неделя. Ты меняешься — даже если не замечаешь.</p>
-                    <textarea id="identityInput" placeholder="Я — тот, кто...">${state.weeklyIdentity[weekNumber] || ''}</textarea>
-                    <button class="btn btn-primary mt-8" id="btnSaveIdentity">Сохранить</button>
-                </div>
-            `;
-        }
-
-        function renderGratitudeQuestion(today) {
-            return `
-                <div class="card" style="background:#fefdf7;border-color:#e8e4d0;">
-                    <h3>🌸 Сад благодарности</h3>
-                    <p class="text-muted" style="font-size:13px;">Что ценного было в этих днях, даже если было трудно?</p>
-                    <textarea id="gratitudeInput" placeholder="Я благодарен(на) за..."></textarea>
-                    <button class="btn btn-primary mt-8" id="btnSaveGratitude">Добавить в сад</button>
-                </div>
-            `;
+            return `<div id="dailyForm">
+                <label>Насколько день приблизил тебя к цели?</label>
+                <div class="scale-row" id="scaleRow">${[1,2,3,4,5,6,7,8,9,10].map(n=>`<button class="scale-btn" data-scale="${n}">${n}</button>`).join('')}</div>
+                <label>Какие чувства были сегодня?</label>
+                <div class="feelings-scroll"><div class="feelings-grid" id="feelingsGrid">${FEELINGS.map(f=>`<button class="feeling-chip" data-feeling="${f.id}" title="${f.tagline}">${f.emoji} ${f.name}</button>`).join('')}</div></div>
+                <div id="heavyFeelingContainer"></div>
+                <label>Какая мысль крутилась в голове?</label><textarea id="thoughtInput" placeholder="О чём ты думал(а) сегодня?"></textarea>
+                <div id="thoughtCheck" class="hidden"></div>
+                <label>Что сегодня сработало, помогло, поддержало?</label><textarea id="helpedInput" placeholder="Что приблизило к цели?"></textarea>
+                <label>Что мешало, сбивало, отнимало энергию?</label><textarea id="hinderedInput" placeholder="Что отдалило от цели?"></textarea>
+                <label>💡 Инсайт дня</label><textarea id="insightInput" placeholder="Что я понял(а) сегодня?"></textarea>
+                <label>🌟 Маленькая победа</label><textarea id="winInput" placeholder="За что я могу себя поблагодарить?"></textarea>
+                <label>🤲 Как я могу сам(а) поддержать себя?</label><textarea id="selfSupportInput" placeholder="Что бы я сказал(а) другу? Что мне нужно?"></textarea>
+                <label>💬 Что я хочу вынести на сессию с Катей?</label><textarea id="sessionNoteInput" placeholder="Вопрос или чувство для обсуждения"></textarea>
+                <button class="btn btn-primary mt-12" id="btnSaveDay">Сохранить день</button>
+            </div>`;
         }
 
         function renderReturnScreen() {
-            return `
-                <div class="card" style="text-align:center;">
-                    <div style="font-size:48px;">${state.wandererEmoji || '🧭'}</div>
-                    <div class="return-banner">
-                        <h3>${state.wandererName || 'Путник'}, ты вернулся</h3>
-                        <p class="text-muted">${getRandomPhrase('return')}</p>
-                    </div>
-                    <button class="btn btn-primary btn-block" id="btnReturnToday">Начать с сегодняшнего дня</button>
-                    <button class="btn btn-secondary btn-block" id="btnReturnTrail">Посмотреть путь</button>
-                </div>
-            `;
+            return `<div class="card" style="text-align:center;">
+                <div style="font-size:48px;">${state.wandererEmoji||'🧭'}</div>
+                <div class="return-banner"><h3>${state.wandererName||'Путник'}, ты вернулся</h3><p class="text-muted">${getRandomPhrase('return')}</p></div>
+                <button class="btn btn-primary btn-block" id="btnReturnToday">Начать с сегодняшнего дня</button>
+                <button class="btn btn-secondary btn-block" id="btnReturnTrail">Посмотреть путь</button>
+            </div>`;
         }
 
         function renderSummary() {
-            const progress = getProgress();
-            const allDays = Object.entries(state.days).map(([day, data]) => ({ day: parseInt(day), ...data }));
-            const sortedDays = allDays.sort((a, b) => a.day - b.day);
-            const scales = sortedDays.map(d => d.scale || 0);
-            const avgScale = scales.length > 0 ? Math.round(scales.reduce((a, b) => a + b, 0) / scales.length) : 0;
-            const insights = sortedDays.filter(d => d.insight).map(d => d.insight).slice(-5);
-            const selfSupports = sortedDays.filter(d => d.selfSupport).map(d => d.selfSupport).slice(-5);
-            const sessionNotes = sortedDays.filter(d => d.sessionNote).map(d => d.sessionNote);
+            const progress=getProgress();
+            const allDays=Object.entries(state.days).map(([d,data])=>({day:parseInt(d),...data}));
+            const sortedDays=allDays.sort((a,b)=>a.day-b.day);
+            const scales=sortedDays.map(d=>d.scale||0);
+            const avgScale=scales.length>0?Math.round(scales.reduce((a,b)=>a+b,0)/scales.length):0;
+            const insights=sortedDays.filter(d=>d.insight).map(d=>d.insight).slice(-5);
+            const sessionNotes=sortedDays.filter(d=>d.sessionNote).map(d=>d.sessionNote);
+            const selfSupports=sortedDays.filter(d=>d.selfSupport).map(d=>d.selfSupport).slice(-5);
+            const shareCount=state.sharingHistory.length;
 
             return `
-                <div class="card text-center">
-                    <div style="font-size:48px;">🌟</div>
-                    <h2>${state.wandererName || 'Путник'}, твой путь пройден</h2>
-                    <p class="text-muted">Месяц завершён. Посмотри, каким он был.</p>
-                </div>
-                <div class="card">
-                    <h3>📊 Цифры пути</h3>
-                    <div class="summary-section">
-                        <p><strong>Пройдено дней:</strong> ${progress.completed} из ${TOTAL_DAYS}</p>
-                        <p><strong>Среднее приближение:</strong> ${avgScale}/10</p>
-                        ${scales.length > 0 ? `<p><strong>Старт → Финиш:</strong> ${scales[0]}/10 → ${scales[scales.length-1]}/10</p>` : ''}
-                    </div>
-                    ${scales.length > 0 ? `
-                        <div style="display:flex;align-items:flex-end;gap:2px;height:80px;padding:8px 0;">
-                            ${scales.map((s, i) => `<div style="flex:1;background:var(--primary);height:${s*10}%;border-radius:3px 3px 0 0;min-width:3px;" title="День ${i+1}: ${s}/10"></div>`).join('')}
-                        </div>
-                    ` : ''}
-                </div>
-                ${insights.length > 0 ? `
-                    <div class="card"><h3>💡 Ключевые инсайты</h3>
-                        ${insights.map(i => `<div class="summary-section">${escapeHtml(i)}</div>`).join('')}
-                    </div>` : ''}
-                ${Object.keys(state.weeklyIdentity).length > 0 ? `
-                    <div class="card"><h3>🪞 Кто я сейчас</h3>
-                        ${Object.entries(state.weeklyIdentity).sort((a,b)=>parseInt(a[0])-parseInt(b[0])).map(([w,t])=>`<div class="summary-section"><strong>Неделя ${w}:</strong> ${escapeHtml(t)}</div>`).join('')}
-                    </div>` : ''}
-                ${sessionNotes.length > 0 ? `
-                    <div class="card"><h3>💬 Вопросы для сессии с Катей</h3>
-                        ${sessionNotes.map(s => `<div class="summary-section">${escapeHtml(s)}</div>`).join('')}
-                    </div>` : ''}
+                <div class="card text-center"><div style="font-size:48px;">🌟</div><h2>${state.wandererName||'Путник'}, твой путь пройден</h2><p class="text-muted">Месяц завершён. Посмотри, каким он был.</p></div>
+                <div class="card"><h3>📊 Цифры</h3><div class="summary-section"><p>Пройдено: ${progress.completed}/${TOTAL_DAYS}</p><p>Среднее приближение: ${avgScale}/10</p>${scales.length>0?`<p>Старт→Финиш: ${scales[0]}/10→${scales[scales.length-1]}/10</p>`:''}${shareCount>0?`<p>💌 Ты делился с Катей ${shareCount} ${shareCount===1?'раз':shareCount<5?'раза':'раз'} за этот месяц</p>`:''}</div>
+                ${scales.length>0?`<div class="mini-chart" style="height:80px;">${scales.map(s=>`<div class="mini-chart-bar" style="height:${s*10}%;" title="${s}/10"></div>`).join('')}</div>`:''}</div>
+                ${state.goalHistory.length>0?`<div class="card"><h3>🌿 Развилки пути</h3>${state.goalHistory.map((h,i)=>`<div class="summary-section"><p style="font-size:12px;color:var(--text-light);">Развилка ${i+1}:</p><p style="font-size:13px;">${escapeHtml(h.goal)}</p></div>`).join('')}</div>`:''}
+                ${insights.length>0?`<div class="card"><h3>💡 Инсайты</h3>${insights.map(i=>`<div class="summary-section">${escapeHtml(i)}</div>`).join('')}</div>`:''}
+                ${Object.keys(state.weeklyIdentity).length>0?`<div class="card"><h3>🪞 Кто я сейчас</h3>${Object.entries(state.weeklyIdentity).sort((a,b)=>parseInt(a[0])-parseInt(b[0])).map(([w,t])=>`<div class="summary-section"><strong>Нед.${w}:</strong> ${escapeHtml(t)}</div>`).join('')}</div>`:''}
+                ${selfSupports.length>0?`<div class="card"><h3>🤲 Способы самоподдержки</h3>${selfSupports.map(s=>`<div class="summary-section">${escapeHtml(s)}</div>`).join('')}</div>`:''}
+                ${sessionNotes.length>0?`<div class="card"><h3>💬 На сессию с Катей</h3>${sessionNotes.map(s=>`<div class="summary-section">${escapeHtml(s)}</div>`).join('')}</div>`:''}
+                ${state.gratitudeGarden.length>0?`<div class="card"><h3>🌸 Сад благодарности</h3>${state.gratitudeGarden.map(g=>`<div class="summary-section"><strong>День ${g.dayNumber}:</strong> ${escapeHtml(g.text)}</div>`).join('')}</div>`:''}
                 <div class="card text-center">
                     <button class="btn btn-primary btn-block" id="btnShareSummary">Поделиться с Катей</button>
                     <button class="btn btn-secondary btn-block" id="btnSavePDF">Сохранить как PDF</button>
@@ -1189,439 +787,133 @@
             `;
         }
 
-        // ==================== ОБРАБОТЧИКИ ====================
-
         function attachListeners() {
-            // Создание путника
-            const btnStart = document.getElementById('btnStartWanderer');
-            if (btnStart) {
-                btnStart.addEventListener('click', () => {
-                    const nameInput = document.getElementById('wandererName');
-                    state.wandererName = nameInput.value.trim() || 'Путник';
-                    state.screen = 'choose_tempo';
-                    saveState(state);
-                    render();
-                });
-            }
+            const btnStart=document.getElementById('btnStartWanderer');
+            if(btnStart)btnStart.addEventListener('click',()=>{const n=document.getElementById('wandererName');state.wandererName=n.value.trim()||'Путник';state.screen='choose_tempo';saveState(state);render();});
 
-            // Эмодзи-пикер
-            const emojiPicker = document.getElementById('emojiPicker');
-            if (emojiPicker) {
-                emojiPicker.addEventListener('click', (e) => {
-                    const btn = e.target.closest('[data-emoji]');
-                    if (btn) { state.wandererEmoji = btn.dataset.emoji;
-                        saveState(state);
-                        render(); }
-                });
-            }
+            const emojiPicker=document.getElementById('emojiPicker');
+            if(emojiPicker)emojiPicker.addEventListener('click',(e)=>{const b=e.target.closest('[data-emoji]');if(b){state.wandererEmoji=b.dataset.emoji;saveState(state);render();}});
 
-            // Выбор темпа
-            const tempoOptions = document.getElementById('tempoOptions');
-            if (tempoOptions) {
-                tempoOptions.addEventListener('click', (e) => {
-                    const card = e.target.closest('[data-tempo]');
-                    if (card) {
-                        state.tempo = card.dataset.tempo;
-                        document.querySelectorAll('.tempo-card').forEach(c => c.classList.remove(
-                            'selected'));
-                        card.classList.add('selected');
-                        document.getElementById('btnConfirmTempo').classList.remove('hidden');
-                        saveState(state);
-                    }
-                });
-            }
-            const btnConfirmTempo = document.getElementById('btnConfirmTempo');
-            if (btnConfirmTempo) {
-                btnConfirmTempo.addEventListener('click', () => {
-                    state.screen = 'set_goal';
-                    state.startDate = new Date().toISOString().split('T')[0];
-                    saveState(state);
-                    render();
-                });
-            }
+            const tempoOptions=document.getElementById('tempoOptions');
+            if(tempoOptions)tempoOptions.addEventListener('click',(e)=>{const c=e.target.closest('[data-tempo]');if(c){state.tempo=c.dataset.tempo;document.querySelectorAll('.tempo-card').forEach(x=>x.classList.remove('selected'));c.classList.add('selected');document.getElementById('btnConfirmTempo').classList.remove('hidden');saveState(state);}});
+            const btnConfirmTempo=document.getElementById('btnConfirmTempo');
+            if(btnConfirmTempo)btnConfirmTempo.addEventListener('click',()=>{state.screen='set_goal';state.startDate=new Date().toISOString().split('T')[0];saveState(state);render();});
 
-            // Сохранение цели
-            const btnSaveGoal = document.getElementById('btnSaveGoal');
-            if (btnSaveGoal) {
-                btnSaveGoal.addEventListener('click', () => {
-                    const input = document.getElementById('goalInput');
-                    const newGoal = input.value.trim();
-                    if (newGoal && newGoal !== state.goal && state.goal) {
-                        state.goalHistory.push({ goal: state.goal, date: new Date().toISOString().split('T')[0] });
-                    }
-                    state.goal = newGoal || state.goal;
-                    if (state.tempo === 'deep' || state.tempo === 'confident') {
-                        state.screen = 'set_values';
-                    } else {
-                        // Мягкий старт или быстрый старт — сразу на тропу
-                        state.screen = 'trail';
-                        state.startDate = state.startDate || new Date().toISOString().split('T')[0];
-                    }
-                    saveState(state);
-                    render();
-                });
-            }
+            const btnSaveGoal=document.getElementById('btnSaveGoal');
+            if(btnSaveGoal)btnSaveGoal.addEventListener('click',()=>{const input=document.getElementById('goalInput');const ng=input.value.trim();if(ng&&ng!==state.goal&&state.goal)state.goalHistory.push({goal:state.goal,date:new Date().toISOString().split('T')[0]});state.goal=ng||state.goal;state.screen=state.tempo==='deep'||state.tempo==='confident'?'set_values':'trail';state.startDate=state.startDate||new Date().toISOString().split('T')[0];saveState(state);render();});
 
-            // Выбор ценностей
-            const valuesGrid = document.getElementById('valuesGrid');
-            if (valuesGrid) {
-                valuesGrid.addEventListener('click', (e) => {
-                    const chip = e.target.closest('[data-value]');
-                    if (chip) {
-                        const val = chip.dataset.value;
-                        if (state.values.includes(val)) { state.values = state.values.filter(v => v !==
-                                val); } else if (state.values.length < 3) { state.values.push(val); }
-                        saveState(state);
-                        render();
-                    }
-                });
-            }
-            const btnSaveValues = document.getElementById('btnSaveValues');
-            if (btnSaveValues) {
-                btnSaveValues.addEventListener('click', () => {
-                    if (state.values.length === 3) {
-                        state.screen = 'trail';
-                        state.startDate = state.startDate || new Date().toISOString().split('T')[0];
-                        saveState(state);
-                        render();
-                    }
-                });
-            }
+            const valuesGrid=document.getElementById('valuesGrid');
+            if(valuesGrid)valuesGrid.addEventListener('click',(e)=>{const chip=e.target.closest('[data-value]');if(chip){const v=chip.dataset.value;if(state.values.includes(v))state.values=state.values.filter(x=>x!==v);else if(state.values.length<3)state.values.push(v);saveState(state);render();}});
+            const btnSaveValues=document.getElementById('btnSaveValues');
+            if(btnSaveValues)btnSaveValues.addEventListener('click',()=>{if(state.values.length===3){state.screen='trail';state.startDate=state.startDate||new Date().toISOString().split('T')[0];saveState(state);render();}});
 
-            // Сетка шагов на тропе
-            const stepsGrid = document.getElementById('stepsGrid');
-            if (stepsGrid) {
-                stepsGrid.addEventListener('click', (e) => {
-                    const cell = e.target.closest('[data-day]');
-                    if (cell && !cell.disabled) {
-                        const day = parseInt(cell.dataset.day);
-                        if (state.days[day]) {
-                            state.screen = 'review_day';
-                        } else {
-                            state.screen = 'daily_card';
-                        }
-                        state.currentViewDay = day;
-                        saveState(state);
-                        render();
-                    }
-                });
-            }
+            const stepsGrid=document.getElementById('stepsGrid');
+            if(stepsGrid)stepsGrid.addEventListener('click',(e)=>{const cell=e.target.closest('[data-day]');if(cell&&!cell.disabled){const day=parseInt(cell.dataset.day);if(state.days[day]){state.screen='review_day';}else if(day<getTodayDayNumber()){state.screen='missed_day';}else{state.screen='daily_card';}state.currentViewDay=day;saveState(state);render();}});
 
-            // Начать путь (с тропы)
-            const btnStartJourney = document.getElementById('btnStartJourney');
-            if (btnStartJourney) {
-                btnStartJourney.addEventListener('click', () => {
-                    state.startDate = new Date().toISOString().split('T')[0];
-                    state.screen = 'daily_card';
-                    state.currentViewDay = 1;
-                    saveState(state);
-                    render();
-                });
-            }
+            const btnStartJourney=document.getElementById('btnStartJourney');
+            if(btnStartJourney)btnStartJourney.addEventListener('click',()=>{state.startDate=new Date().toISOString().split('T')[0];state.screen='daily_card';state.currentViewDay=1;saveState(state);render();});
+            const btnStartToday=document.getElementById('btnStartToday');
+            if(btnStartToday)btnStartToday.addEventListener('click',()=>{state.screen='daily_card';state.currentViewDay=getTodayDayNumber();saveState(state);render();});
+            const btnReviewToday=document.getElementById('btnReviewToday');
+            if(btnReviewToday)btnReviewToday.addEventListener('click',()=>{state.screen='review_day';state.currentViewDay=getTodayDayNumber();saveState(state);render();});
+            const btnChangeGoal=document.getElementById('btnChangeGoal');
+            if(btnChangeGoal)btnChangeGoal.addEventListener('click',()=>{state.screen='set_goal';saveState(state);render();});
 
-            // Начать сегодняшний день
-            const btnStartToday = document.getElementById('btnStartToday');
-            if (btnStartToday) {
-                btnStartToday.addEventListener('click', () => {
-                    state.screen = 'daily_card';
-                    state.currentViewDay = getTodayDayNumber();
-                    saveState(state);
-                    render();
-                });
-            }
+            document.querySelectorAll('[id^="btnBackToTrail"]').forEach(b=>b.addEventListener('click',()=>{state.screen='trail';saveState(state);render();}));
 
-            // Посмотреть сегодняшний день
-            const btnReviewToday = document.getElementById('btnReviewToday');
-            if (btnReviewToday) {
-                btnReviewToday.addEventListener('click', () => {
-                    state.screen = 'review_day';
-                    state.currentViewDay = getTodayDayNumber();
-                    saveState(state);
-                    render();
-                });
-            }
+            const btnLiveMissed=document.getElementById('btnLiveMissed');
+            if(btnLiveMissed)btnLiveMissed.addEventListener('click',()=>{state.screen='daily_card';saveState(state);render();});
 
-            // Изменить цель
-            const btnChangeGoal = document.getElementById('btnChangeGoal');
-            if (btnChangeGoal) {
-                btnChangeGoal.addEventListener('click', () => {
-                    state.screen = 'set_goal';
-                    saveState(state);
-                    render();
-                });
-            }
+            const scaleRow=document.getElementById('scaleRow');
+            if(scaleRow)scaleRow.addEventListener('click',(e)=>{const btn=e.target.closest('[data-scale]');if(btn){document.querySelectorAll('#scaleRow .scale-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const tc=document.getElementById('thoughtCheck');if(parseInt(btn.dataset.scale)<=4&&tc){tc.classList.remove('hidden');tc.innerHTML=`<div class="container-box mt-8"><p style="font-size:13px;">Когда приближение небольшое — часто включаются автоматические мысли.</p><label>Это факт или интерпретация?</label><textarea id="thoughtCheckInput" placeholder="Факт можно доказать. Интерпретация — то, как я это воспринимаю."></textarea><label>Что бы ты сказал(а) другу с такой же мыслью?</label><textarea id="thoughtAltInput" placeholder="Альтернативный взгляд..."></textarea></div>`;}else if(tc)tc.classList.add('hidden');}});
 
-            // Назад на тропу
-            document.querySelectorAll('[id^="btnBackToTrail"]').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    state.screen = 'trail';
-                    saveState(state);
-                    render();
-                });
-            });
+            const feelingsGrid=document.getElementById('feelingsGrid');
+            if(feelingsGrid)feelingsGrid.addEventListener('click',(e)=>{const chip=e.target.closest('[data-feeling]');if(chip){chip.classList.toggle('selected');updateHeavyContainer();}});
 
-            // Шкала в форме дня
-            const scaleRow = document.getElementById('scaleRow');
-            if (scaleRow) {
-                scaleRow.addEventListener('click', (e) => {
-                    const btn = e.target.closest('[data-scale]');
-                    if (btn) {
-                        document.querySelectorAll('#scaleRow .scale-btn').forEach(b => b.classList.remove(
-                            'active'));
-                        btn.classList.add('active');
-                        const scale = parseInt(btn.dataset.scale);
-                        const thoughtCheck = document.getElementById('thoughtCheck');
-                        if (scale <= 4 && thoughtCheck) {
-                            thoughtCheck.classList.remove('hidden');
-                            thoughtCheck.innerHTML = `
-                                <div class="container-box mt-8">
-                                    <p style="font-size:13px;">Когда приближение небольшое — часто включаются автоматические мысли.</p>
-                                    <label>Это факт или интерпретация?</label>
-                                    <textarea id="thoughtCheckInput" placeholder="Факт можно доказать. Интерпретация — то, как я это воспринимаю."></textarea>
-                                    <label>Что бы ты сказал(а) другу с такой же мыслью?</label>
-                                    <textarea id="thoughtAltInput" placeholder="Альтернативный взгляд..."></textarea>
-                                </div>
-                            `;
-                        } else if (thoughtCheck) {
-                            thoughtCheck.classList.add('hidden');
-                        }
-                    }
-                });
-            }
+            const btnSaveDay=document.getElementById('btnSaveDay');
+            if(btnSaveDay)btnSaveDay.addEventListener('click',()=>{const dn=state.currentViewDay||getTodayDayNumber();const sb=document.querySelector('#scaleRow .scale-btn.active');const scale=sb?parseInt(sb.dataset.scale):5;const sfs=[...document.querySelectorAll('#feelingsGrid .feeling-chip.selected')].map(c=>c.dataset.feeling);state.days[dn]={scale,feelings:sfs,thought:document.getElementById('thoughtInput')?.value||'',thoughtCheck:document.getElementById('thoughtCheckInput')?.value||'',thoughtAlt:document.getElementById('thoughtAltInput')?.value||'',helped:document.getElementById('helpedInput')?.value||'',hindered:document.getElementById('hinderedInput')?.value||'',insight:document.getElementById('insightInput')?.value||'',win:document.getElementById('winInput')?.value||'',selfSupport:document.getElementById('selfSupportInput')?.value||'',sessionNote:document.getElementById('sessionNoteInput')?.value||'',timestamp:new Date().toISOString()};state.screen=dn>=TOTAL_DAYS?'completed':'trail';state.lastActiveDate=new Date().toISOString().split('T')[0];saveState(state);render();});
 
-            // Чувства
-            const feelingsGrid = document.getElementById('feelingsGrid');
-            if (feelingsGrid) {
-                feelingsGrid.addEventListener('click', (e) => {
-                    const chip = e.target.closest('[data-feeling]');
-                    if (chip) {
-                        chip.classList.toggle('selected');
-                        updateHeavyFeelingContainer();
-                    }
-                });
-            }
+            const btnSaveIdentityTrail=document.getElementById('btnSaveIdentityTrail');
+            if(btnSaveIdentityTrail)btnSaveIdentityTrail.addEventListener('click',()=>{const inp=document.getElementById('identityInputTrail');if(inp&&inp.value.trim()){state.weeklyIdentity[getCurrentWeekNumber()]=inp.value.trim();saveState(state);render();}});
+            const btnSaveGratitudeTrail=document.getElementById('btnSaveGratitudeTrail');
+            if(btnSaveGratitudeTrail)btnSaveGratitudeTrail.addEventListener('click',()=>{const inp=document.getElementById('gratitudeInputTrail');if(inp&&inp.value.trim()){state.gratitudeGarden.push({dayNumber:getTodayDayNumber(),text:inp.value.trim()});saveState(state);render();}});
+            const btnMaelstromOk=document.getElementById('btnMaelstromOk');
+            if(btnMaelstromOk)btnMaelstromOk.addEventListener('click',()=>{state._maelstromShown=true;saveState(state);render();});
+            const btnAddSelfSupport=document.getElementById('btnAddSelfSupport');
+            if(btnAddSelfSupport)btnAddSelfSupport.addEventListener('click',()=>{state.screen='daily_card';state.currentViewDay=getTodayDayNumber();saveState(state);render();});
 
-            // Сохранение дня
-            const btnSaveDay = document.getElementById('btnSaveDay');
-            if (btnSaveDay) {
-                btnSaveDay.addEventListener('click', () => {
-                    const dayNumber = state.currentViewDay || getTodayDayNumber();
-                    const selectedScaleBtn = document.querySelector('#scaleRow .scale-btn.active');
-                    const scale = selectedScaleBtn ? parseInt(selectedScaleBtn.dataset.scale) : 5;
-                    const selectedFeelings = [...document.querySelectorAll('#feelingsGrid .feeling-chip.selected')]
-                        .map(c => c.dataset.feeling);
-                    state.days[dayNumber] = {
-                        scale,
-                        feelings: selectedFeelings,
-                        thought: document.getElementById('thoughtInput')?.value || '',
-                        thoughtCheck: document.getElementById('thoughtCheckInput')?.value || '',
-                        thoughtAlt: document.getElementById('thoughtAltInput')?.value || '',
-                        helped: document.getElementById('helpedInput')?.value || '',
-                        hindered: document.getElementById('hinderedInput')?.value || '',
-                        insight: document.getElementById('insightInput')?.value || '',
-                        win: document.getElementById('winInput')?.value || '',
-                        selfSupport: document.getElementById('selfSupportInput')?.value || '',
-                        sessionNote: document.getElementById('sessionNoteInput')?.value || '',
-                        timestamp: new Date().toISOString()
-                    };
-                    // Проверяем завершение
-                    if (dayNumber >= TOTAL_DAYS) {
-                        state.screen = 'completed';
-                    } else {
-                        state.screen = 'trail';
-                    }
-                    state.lastActiveDate = new Date().toISOString().split('T')[0];
-                    saveState(state);
-                    render();
-                });
-            }
+            const btnReturnToday=document.getElementById('btnReturnToday');
+            if(btnReturnToday)btnReturnToday.addEventListener('click',()=>{state.screen='trail';state.lastActiveDate=new Date().toISOString().split('T')[0];saveState(state);render();});
+            const btnReturnTrail=document.getElementById('btnReturnTrail');
+            if(btnReturnTrail)btnReturnTrail.addEventListener('click',()=>{state.screen='trail';state.lastActiveDate=new Date().toISOString().split('T')[0];saveState(state);render();});
 
-            // Сохранение идентичности
-            const btnSaveIdentity = document.getElementById('btnSaveIdentity');
-            if (btnSaveIdentity) {
-                btnSaveIdentity.addEventListener('click', () => {
-                    const weekNumber = getCurrentWeekNumber();
-                    const input = document.getElementById('identityInput');
-                    if (input && input.value.trim()) {
-                        state.weeklyIdentity[weekNumber] = input.value.trim();
-                        saveState(state);
-                        render();
-                    }
-                });
-            }
+            document.querySelectorAll('#btnShareDay, #btnShareTodayInline').forEach(b=>b.addEventListener('click',()=>{const dn=state.currentViewDay||getTodayDayNumber();const data=state.days[dn];if(data){shareToTelegram(buildDayShareText(dn,data));state.sharingHistory.push({type:'day',date:new Date().toISOString()});saveState(state);showToast('Отправлено Кате 🤍');}}));
+            const btnShareWeek=document.getElementById('btnShareWeek');
+            if(btnShareWeek)btnShareWeek.addEventListener('click',()=>{shareToTelegram(buildWeekShareText());state.sharingHistory.push({type:'week',date:new Date().toISOString()});saveState(state);showToast('Неделя отправлена Кате 🤍');});
+            const btnShareSummary=document.getElementById('btnShareSummary');
+            if(btnShareSummary)btnShareSummary.addEventListener('click',()=>{shareToTelegram(buildSummaryShareText());state.sharingHistory.push({type:'summary',date:new Date().toISOString()});saveState(state);showToast('Итоги отправлены Кате 🤍');});
 
-            // Сохранение благодарности
-            const btnSaveGratitude = document.getElementById('btnSaveGratitude');
-            if (btnSaveGratitude) {
-                btnSaveGratitude.addEventListener('click', () => {
-                    const today = getTodayDayNumber();
-                    const input = document.getElementById('gratitudeInput');
-                    if (input && input.value.trim()) {
-                        state.gratitudeGarden.push({ dayNumber: today, text: input.value.trim() });
-                        saveState(state);
-                        render();
-                    }
-                });
-            }
+            const btnSavePDF=document.getElementById('btnSavePDF');
+            if(btnSavePDF)btnSavePDF.addEventListener('click',saveAsPDF);
 
-            // Возвращение
-            const btnReturnToday = document.getElementById('btnReturnToday');
-            if (btnReturnToday) {
-                btnReturnToday.addEventListener('click', () => {
-                    state.screen = 'trail';
-                    state.lastActiveDate = new Date().toISOString().split('T')[0];
-                    saveState(state);
-                    render();
-                });
-            }
-            const btnReturnTrail = document.getElementById('btnReturnTrail');
-            if (btnReturnTrail) {
-                btnReturnTrail.addEventListener('click', () => {
-                    state.screen = 'trail';
-                    state.lastActiveDate = new Date().toISOString().split('T')[0];
-                    saveState(state);
-                    render();
-                });
-            }
-
-            // Шаринг
-            document.querySelectorAll('#btnShareDay, #btnShareSummary').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const dayNumber = state.currentViewDay || getTodayDayNumber();
-                    const data = state.days[dayNumber];
-                    const text = data ? buildDayShareText(dayNumber, data) : buildSummaryShareText();
-                    shareToTelegram(text);
-                    state.sharingHistory.push({ type: data ? 'day' : 'summary', date: new Date()
-                            .toISOString() });
-                    saveState(state);
-                });
-            });
-
-            // PDF
-            const btnSavePDF = document.getElementById('btnSavePDF');
-            if (btnSavePDF) { btnSavePDF.addEventListener('click', saveAsPDF); }
-
-            // Новый цикл
-            const btnNewCycle = document.getElementById('btnNewCycle');
-            if (btnNewCycle) {
-                btnNewCycle.addEventListener('click', () => {
-                    state.completedCycles++;
-                    state.screen = 'set_goal';
-                    state.goal = '';
-                    state.startDate = null;
-                    state.days = {};
-                    state.weeklyIdentity = {};
-                    state.gratitudeGarden = [];
-                    state.goalHistory = [];
-                    saveState(state);
-                    render();
-                });
-            }
-            const btnContinueCycle = document.getElementById('btnContinueCycle');
-            if (btnContinueCycle) {
-                btnContinueCycle.addEventListener('click', () => {
-                    state.completedCycles++;
-                    state.screen = 'trail';
-                    state.startDate = new Date().toISOString().split('T')[0];
-                    state.days = {};
-                    state.weeklyIdentity = {};
-                    state.gratitudeGarden = [];
-                    saveState(state);
-                    render();
-                });
-            }
+            const btnNewCycle=document.getElementById('btnNewCycle');
+            if(btnNewCycle)btnNewCycle.addEventListener('click',()=>{state.completedCycles++;state.screen='set_goal';state.goal='';state.startDate=null;state.days={};state.weeklyIdentity={};state.gratitudeGarden=[];state.goalHistory=[];state._maelstromShown=false;saveState(state);render();});
+            const btnContinueCycle=document.getElementById('btnContinueCycle');
+            if(btnContinueCycle)btnContinueCycle.addEventListener('click',()=>{state.completedCycles++;state.screen='trail';state.startDate=new Date().toISOString().split('T')[0];state.days={};state.weeklyIdentity={};state.gratitudeGarden=[];state._maelstromShown=false;saveState(state);render();});
         }
 
-        function updateHeavyFeelingContainer() {
-            const container = document.getElementById('heavyFeelingContainer');
-            if (!container) return;
-            const selectedFeelings = [...document.querySelectorAll('#feelingsGrid .feeling-chip.selected')].map(c => c.dataset
-                .feeling);
-            const heavySelected = selectedFeelings.filter(fid => HEAVY_FEELINGS[fid]);
-            if (heavySelected.length > 0) {
-                const hf = HEAVY_FEELINGS[heavySelected[0]];
-                container.innerHTML = `
-                    <div class="container-box">
-                        <h4>${hf.title}</h4>
-                        <p>${hf.body}</p>
-                        <p><strong>${hf.truth}</strong></p>
-                        <p class="note">${hf.note}</p>
-                        <a href="https://t.me/ginger_coach4you" target="_blank" class="btn btn-outline btn-sm mt-8">Мне нужно больше поддержки</a>
-                    </div>
-                `;
-            } else { container.innerHTML = ''; }
+        function updateHeavyContainer() {
+            const container=document.getElementById('heavyFeelingContainer');
+            if(!container)return;
+            const sfs=[...document.querySelectorAll('#feelingsGrid .feeling-chip.selected')].map(c=>c.dataset.feeling);
+            const hs=sfs.filter(fid=>HEAVY_FEELINGS[fid]);
+            if(hs.length>0){const hf=HEAVY_FEELINGS[hs[0]];container.innerHTML=`<div class="container-box"><h4>${hf.title}</h4><p>${hf.body}</p><p><strong>${hf.truth}</strong></p><p class="note">${hf.note}</p><a href="${TG_KATYA}" target="_blank" class="btn btn-accent btn-sm mt-8">Мне нужно больше поддержки</a></div>`;}else container.innerHTML='';
         }
 
-        function buildDayShareText(dayNumber, data) {
-            const f = data.feelings ? data.feelings.map(fid => FEELINGS.find(ff => ff.id === fid)).filter(Boolean) : [];
-            let text = `🧭 ${state.wandererName || 'Путник'}, ${formatDate(dayNumber)}\n\n`;
-            text += `Приближение: ${data.scale}/10\n`;
-            if (f.length > 0) text += `Чувства: ${f.map(ff => ff.emoji + ' ' + ff.name).join(', ')}\n`;
-            if (data.insight) text += `\n💡 Инсайт: ${data.insight}\n`;
-            if (data.sessionNote) text += `\n💬 На сессию: ${data.sessionNote}\n`;
-            text += `\n— Навигатор моего пути`;
-            return text;
+        function buildDayShareText(dn,data){
+            const f=data.feelings?data.feelings.map(fid=>FEELINGS.find(ff=>ff.id===fid)).filter(Boolean):[];
+            let t=`🧭 ${state.wandererName||'Путник'}, ${formatDate(dn)}\n\nПриближение: ${data.scale}/10\n`;
+            if(f.length>0)t+=`Чувства: ${f.map(ff=>ff.emoji+' '+ff.name).join(', ')}\n`;
+            if(data.insight)t+=`\n💡 Инсайт: ${data.insight}\n`;
+            if(data.sessionNote)t+=`\n💬 На сессию: ${data.sessionNote}\n`;
+            t+=`\n— Навигатор моего пути`;return t;
+        }
+        function buildWeekShareText(){
+            const today=getTodayDayNumber();const weekStart=Math.max(1,today-6);
+            const weekDays=Object.entries(state.days).filter(([d])=>parseInt(d)>=weekStart&&parseInt(d)<=today).map(([d,data])=>({day:parseInt(d),...data}));
+            let t=`📅 ${state.wandererName||'Путник'}, неделя (дни ${weekStart}–${today})\n\n`;
+            weekDays.forEach(d=>{t+=`День ${d.day}: ${d.scale}/10`;if(d.insight)t+=` — ${d.insight.substring(0,60)}`;t+='\n';});
+            t+=`\n— Навигатор моего пути`;return t;
+        }
+        function buildSummaryShareText(){
+            const p=getProgress();const allDays=Object.entries(state.days).map(([d,data])=>({day:parseInt(d),...data}));
+            const scales=allDays.map(d=>d.scale||0);const avg=scales.length>0?Math.round(scales.reduce((a,b)=>a+b,0)/scales.length):0;
+            let t=`🌟 ${state.wandererName||'Путник'}, мой путь за месяц\n\nПройдено: ${p.completed}/${TOTAL_DAYS}\nСреднее приближение: ${avg}/10\n`;
+            const li=Object.entries(state.weeklyIdentity).sort((a,b)=>parseInt(b[0])-parseInt(a[0]))[0];
+            if(li)t+=`\n🪞 Кто я сейчас: ${li[1]}\n`;
+            t+=`\n— Навигатор моего пути`;return t;
+        }
+        function shareToTelegram(text){window.open(`https://t.me/ginger_coach4you?text=${encodeURIComponent(text)}`,'_blank');}
+        function saveAsPDF(){
+            const p=getProgress();const allDays=Object.entries(state.days).map(([d,data])=>({day:parseInt(d),...data}));
+            const sortedDays=allDays.sort((a,b)=>a.day-b.day);const scales=sortedDays.map(d=>d.scale||0);
+            const insights=sortedDays.filter(d=>d.insight).map(d=>d.insight);
+            const sessionNotes=sortedDays.filter(d=>d.sessionNote).map(d=>d.sessionNote);
+            const selfSupports=sortedDays.filter(d=>d.selfSupport).map(d=>d.selfSupport);
+            let h=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Навигатор — Итоги</title><style>body{font-family:-apple-system,sans-serif;color:#3a3a3a;padding:24px;max-width:520px;margin:0 auto;line-height:1.6;}h1{color:#4a7c96;text-align:center;}h2{color:#4a7c96;margin-top:16px;border-bottom:1px solid #e8e4dd;padding-bottom:4px;}.s{background:#fafaf9;padding:10px;border-radius:8px;margin:8px 0;}</style></head><body>
+            <h1>${state.wandererEmoji||'🧭'} ${state.wandererName||'Путник'} — карта пути</h1><p style="text-align:center;color:#7a7a7a;">${escapeHtml(state.goal||'')}</p>${state.values.length>0?`<p style="text-align:center;">🧭 ${state.values.join(' • ')}</p>`:''}
+            <h2>📊 Цифры</h2><p>Пройдено: ${p.completed}/${TOTAL_DAYS}</p>${scales.length>0?`<p>Старт: ${scales[0]}/10 → Финиш: ${scales[scales.length-1]}/10</p>`:''}
+            ${state.goalHistory.length>0?`<h2>🌿 Развилки пути</h2>${state.goalHistory.map((h,i)=>`<div class="s"><strong>Развилка ${i+1}:</strong> ${escapeHtml(h.goal)}</div>`).join('')}`:''}
+            ${insights.length>0?`<h2>💡 Инсайты</h2>${insights.map(i=>`<div class="s">${escapeHtml(i)}</div>`).join('')}`:''}
+            ${Object.keys(state.weeklyIdentity).length>0?`<h2>🪞 Кто я сейчас</h2>${Object.entries(state.weeklyIdentity).sort((a,b)=>parseInt(a[0])-parseInt(b[0])).map(([w,t])=>`<div class="s"><strong>Нед.${w}:</strong> ${escapeHtml(t)}</div>`).join('')}`:''}
+            ${selfSupports.length>0?`<h2>🤲 Способы самоподдержки</h2>${selfSupports.map(s=>`<div class="s">${escapeHtml(s)}</div>`).join('')}`:''}
+            ${sessionNotes.length>0?`<h2>💬 На сессию с Катей</h2>${sessionNotes.map(s=>`<div class="s">${escapeHtml(s)}</div>`).join('')}`:''}
+            ${state.gratitudeGarden.length>0?`<h2>🌸 Сад благодарности</h2>${state.gratitudeGarden.map(g=>`<div class="s">${escapeHtml(g.text)}</div>`).join('')}`:''}
+            <p style="text-align:center;margin-top:20px;color:#7a7a7a;">🤍 Навигатор моего пути к цели</p></body></html>`;
+            const pw=window.open('','_blank');pw.document.write(h);pw.document.close();setTimeout(()=>pw.print(),500);
         }
 
-        function buildSummaryShareText() {
-            const progress = getProgress();
-            const allDays = Object.entries(state.days).map(([day, data]) => ({ day: parseInt(day), ...data }));
-            const scales = allDays.map(d => d.scale || 0);
-            const avgScale = scales.length > 0 ? Math.round(scales.reduce((a, b) => a + b, 0) / scales.length) : 0;
-            let text = `🌟 ${state.wandererName || 'Путник'}, мой путь за месяц\n\n`;
-            text += `Пройдено: ${progress.completed} из ${TOTAL_DAYS}\n`;
-            text += `Среднее приближение: ${avgScale}/10\n`;
-            const lastIdentity = Object.entries(state.weeklyIdentity).sort((a, b) => parseInt(b[0]) - parseInt(a[0]))[0];
-            if (lastIdentity) text += `\n🪞 Кто я сейчас: ${lastIdentity[1]}\n`;
-            text += `\n— Навигатор моего пути`;
-            return text;
-        }
-
-        function shareToTelegram(text) {
-            const encoded = encodeURIComponent(text);
-            window.open(`https://t.me/ginger_coach4you?text=${encoded}`, '_blank');
-        }
-
-        function saveAsPDF() {
-            const progress = getProgress();
-            const allDays = Object.entries(state.days).map(([day, data]) => ({ day: parseInt(day), ...data }));
-            const sortedDays = allDays.sort((a, b) => a.day - b.day);
-            const scales = sortedDays.map(d => d.scale || 0);
-            const insights = sortedDays.filter(d => d.insight).map(d => d.insight);
-            const selfSupports = sortedDays.filter(d => d.selfSupport).map(d => d.selfSupport);
-            const sessionNotes = sortedDays.filter(d => d.sessionNote).map(d => d.sessionNote);
-
-            let html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Навигатор — Итоги пути</title>
-                <style>body{font-family:-apple-system,sans-serif;color:#3a3a3a;padding:24px;max-width:520px;margin:0 auto;line-height:1.6;}
-                h1{color:#4a7c96;font-size:20px;text-align:center;}h2{color:#4a7c96;font-size:16px;margin-top:16px;border-bottom:1px solid #e8e4dd;padding-bottom:4px;}
-                .section{background:#fafaf9;padding:10px;border-radius:8px;margin:8px 0;}</style></head><body>
-                <h1>${state.wandererEmoji||'🧭'} ${state.wandererName||'Путник'} — карта пути</h1>
-                <p style="text-align:center;color:#7a7a7a;">${escapeHtml(state.goal||'')}</p>
-                ${state.values.length>0?`<p style="text-align:center;">🧭 ${state.values.join(' • ')}</p>`:''}
-                <h2>📊 Цифры</h2><p>Пройдено: ${progress.completed} из ${TOTAL_DAYS}</p>
-                ${scales.length>0?`<p>Старт: ${scales[0]}/10 → Финиш: ${scales[scales.length-1]}/10</p>`:''}
-                ${insights.length>0?`<h2>💡 Инсайты</h2>${insights.map(i=>`<div class="section">${escapeHtml(i)}</div>`).join('')}`:''}
-                ${Object.keys(state.weeklyIdentity).length>0?`<h2>🪞 Кто я сейчас</h2>${Object.entries(state.weeklyIdentity).sort((a,b)=>parseInt(a[0])-parseInt(b[0])).map(([w,t])=>`<div class="section"><strong>Неделя ${w}:</strong> ${escapeHtml(t)}</div>`).join('')}`:''}
-                ${sessionNotes.length>0?`<h2>💬 На сессию с Катей</h2>${sessionNotes.map(s=>`<div class="section">${escapeHtml(s)}</div>`).join('')}`:''}
-                ${state.gratitudeGarden.length>0?`<h2>🌸 Сад благодарности</h2>${state.gratitudeGarden.map(g=>`<div class="section">${escapeHtml(g.text)}</div>`).join('')}`:''}
-                <p style="text-align:center;margin-top:20px;color:#7a7a7a;">🤍 Навигатор моего пути к цели</p></body></html>`;
-
-            const printWindow = window.open('', '_blank');
-            printWindow.document.write(html);
-            printWindow.document.close();
-            setTimeout(() => printWindow.print(), 500);
-        }
-
-        // ==================== ИНИЦИАЛИЗАЦИЯ ====================
-
-        // Если есть стартовая дата и сегодня больше 30 — завершаем
-        if (state.startDate && state.screen !== 'completed') {
-            const today = getTodayDayNumber();
-            if (today > TOTAL_DAYS) {
-                state.screen = 'completed';
-            }
-        }
-
+        if(state.startDate&&state.screen!=='completed'&&getTodayDayNumber()>TOTAL_DAYS)state.screen='completed';
         render();
     </script>
 </body>
